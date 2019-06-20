@@ -1,0 +1,24 @@
+<view   class="shipping">
+    <view class="shipping-no">
+        <view class="shipping-no-left">
+            <view class="font-weight">物流单号</view>
+            <input class="ship-no" value="{{shippingNumber}}" bindinput='bindName' placeholder-class="pla-class" placeholder='请输入物流单号'></input>
+        </view>
+        <!-- <view class="shipping-no-right" bindtap='scanning'>
+            <image src="../../../static/images/scanning.png"></image>
+        </view> -->
+    </view>
+
+    <view class="shipping-compony">
+        <view class="font-weight">物流公司</view>
+        <view class="choose-reason">
+            <picker bindchange="bindPickerChange" range-key="name" value="{{index}}" range="{{array}}">
+                <view class="weui-input">{{array[index].name}}</view>
+            </picker>
+        </view>
+        <view class="choose-down">
+            <image src="../../../static/images/more.png"></image>
+        </view>
+    </view>
+     <view class="to-submit" bindtap='submitRefund'>提交</view>
+</view>

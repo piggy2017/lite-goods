@@ -1,0 +1,35 @@
+<view class="wish">
+    <view class="wish-bg-top">
+        <image src="http://img.tracenet.cn/bg8.jpg"></image>
+    </view>
+    <view class="" wx:if="{{goodsList.length==0}}">
+        <view class="wraper">
+            <view class="container-kong">
+                <image src="http://img.tracenet.cn/bg15.png"></image>
+            </view>
+            <view class='coupon-none'>未找到相关商品</view>
+            <view class='goHome' bindtap='gHome'>去别处逛逛</view>
+        </view>
+    </view>
+    <view class="postage-content" wx:else>
+        <view class="postage-item" wx:for="{{goodsList}}" wx:key="{{item.id}}">
+
+            <!-- <navigator url="../../goods/goods?id={{item.id}}&wish=1&bargainId={{item.bargainId}}" class="hot-goods-content-item-url"> -->
+
+            <navigator url="../../activity-goods/activity-goods?bargainId={{item.bargainId}}&type=bargain&goodsId={{item.id}}" class="hot-goods-content-item-url">
+                <image src="{{item.list_pic_url}}"></image>
+                <view class="hot-goods-content-item-info">
+                    <view class="hot-goods-content-item-name">{{item.name}}</view>
+
+                    <view class="sale-num">
+                        <view class="sale-num-left">￥{{item.retail_price}}</view>
+                        <view class="sale-num-right" wx:if="{{item.sell_volume==null}}">
+                            已售: 0
+                        </view>
+                        <view class="sale-num-right" wx:else>已售: {{item.sell_volume}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

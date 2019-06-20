@@ -1,0 +1,10 @@
+<view class="pay-result">
+    <view class="hr"></view>
+    <view class="pay-result-content">
+        <image src="../../static/images/pay-success.png"></image>
+        <view class="pay-result-success">付款成功</view>
+        <view class="pay-result-fahuo">我们会在24小时内尽快为您发货！</view>
+    </view>
+    <view class="pay-btn view-order" bindtap='viewOrder'>查看订单</view>
+    <view class="pay-btn back-home" bindtap='backHome'>回到首页</view>
+</view>

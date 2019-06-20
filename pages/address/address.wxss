@@ -1,0 +1,130 @@
+page{
+    min-height: 100%;
+    background-color: #f2f2f2;
+    font-family: PingFangSC-Medium;
+}
+.container-kong{
+    margin: 320rpx auto 0 auto;
+    width: 240rpx;
+    height: 240rpx;
+}
+.container-kong image{
+    width: 240rpx;
+    height: 240rpx;
+}
+.coupon-none{
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #f08d7e;
+}
+.fiexd-bottom{
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    background: #D53333;
+    width: 100%;
+    height: 90rpx;
+    font-size: 32rpx;
+    line-height: 90rpx;
+    text-align: center;
+    color: #FFFFFF;
+}
+.address-item{
+    background: #FFFFFF;
+    box-shadow: 0 12px 28px 0 rgba(0,0,0,0.07);
+    border-radius: 12px;
+    width: 700rpx;
+    /* height: 284rpx; */
+    margin: 20rpx auto 0 auto;
+}
+.address-item-title{
+    font-size: 36rpx;
+    color: #333333;
+    padding: 36rpx 0 0 36rpx;
+    margin-bottom: 16rpx;
+    font-weight: bold;
+}
+.address-item-title-name{
+    margin-right: 30rpx;
+}
+.address-item-detail{
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #666666;
+    padding: 0 36rpx;
+    position: relative;
+    min-height: 50rpx;
+    padding-bottom: 8rpx;
+}
+/* .address-item-detail::after{
+
+} */
+.address-item-bottom{
+    padding: 0 36rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 80rpx;
+    position: relative;
+}
+.address-item-bottom::before{
+    position: absolute;
+    content: "";
+    z-index: 99;
+    height: 1rpx;
+    background-color: #ddd;
+    left: 36rpx;
+    right: 36rpx;
+    top:2rpx;
+}
+.address-item-bottom-left{
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #333333;
+    height: 100%;
+    align-items: center;
+}
+.address-item-bottom-left image{
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+}
+.address-item-bottom-right{
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    align-items: center;
+     position: relative;
+}
+.address-item-bottom-right .navigator-hover{
+    width: 40rpx;
+}
+.address-item-bottom-right image{
+    width: 36rpx;
+    height: 36rpx;
+    position: relative;
+}
+.edit-image{
+    /* margin-right: 60rpx; */
+    display: block;
+}
+.address-item-bottom-right::after{
+    position: absolute;
+    z-index: 99;
+    width: 1rpx;
+    background-color: #ddd;
+    top: 24rpx;
+    bottom: 24rpx;
+    right: 66rpx;
+    content: "";
+}
+.delete-image{
+    margin-left: 60rpx;
+}
+.btn-area{
+    padding-bottom: 140rpx;
+}

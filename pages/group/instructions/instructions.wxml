@@ -1,0 +1,14 @@
+<view>
+    <view class="is-1">
+        <image src="http://img.tracenet.cn/bg41.jpg"></image>
+    </view>
+    <view class="is-2">
+        <image src="http://img.tracenet.cn/bg42.jpg"></image>
+    </view>
+    <view class="is-3">
+        <image src="http://img.tracenet.cn/bg43.jpg"></image>
+    </view>
+    <view class="is-4">
+        <image src="http://img.tracenet.cn/bg44.jpg"></image>
+    </view>
+</view>

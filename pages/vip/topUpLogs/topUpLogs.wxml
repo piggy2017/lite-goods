@@ -1,0 +1,27 @@
+<view class="container" wx:if="{{logsList.length==0}}">
+    <view class="container-kong">
+        <image src="../../../static/images/recharte-kong.png"></image>
+    </view>
+    <view class='coupon-none'>暂无充值记录</view>
+</view>
+<view class="container" wx:else>
+     <view class="topUp-logs-item" wx:for="{{logsList}}" wx:key="{{item.id}}">
+        <view class="topUp-logs-item-title">
+            <view class="topUp-logs-item-title-left">
+                 <text>会员充值</text>
+                 <text class="margin-left-10">({{item.day}}天)</text>
+            </view>
+        </view>
+          <view class="withdrawal-item-time">
+            <text>支付金额:</text>
+            <text class="color-ddd">￥{{item.amount}}</text>
+        </view>
+         <view class="withdrawal-item-time-2">
+            <text>购买时间:</text>
+            <text class="color-ddd">{{item.startTime}}</text>
+        </view>
+           <view class="topUp-logs-item-title-right">
+                {{item.endTime}}到期
+           </view>
+    </view>
+</view>

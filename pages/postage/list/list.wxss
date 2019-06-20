@@ -1,0 +1,103 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.postage-top{
+    width: 100%;
+    height: 300rpx;
+}
+.postage-top image{
+    width: 100%;
+    height:100%;
+}
+.postage-content{
+    width:690rpx;
+    display:flex;
+    flex-flow:row wrap;
+    margin:0 auto 0 auto;
+    padding-bottom: 60rpx;
+}
+.container-kong{
+    margin: 120rpx auto 0 auto;
+    width: 272rpx;
+    height: 240rpx;
+}
+.container-kong image{
+    width: 272rpx;
+    height: 240rpx;
+}
+.coupon-none{
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #f08d7e;
+}
+.goHome{
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 30rpx;
+    border: 1rpx solid #ddd;
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+    margin: 40rpx auto 0 auto;
+}
+.postage-item{
+    width:340rpx;
+    height:auto;
+    background-color:#fff;
+    margin-top:20rpx;
+    padding-bottom:20rpx;
+    border-radius:8rpx;
+}
+.postage-item:nth-child(2n){
+    margin-left: 10rpx;
+}
+.hot-goods-content-item-url{
+    width: 340rpx;
+}
+.hot-goods-content-item-url image{
+    width: 340rpx;
+    height: 340rpx;
+    border-radius: 10rpx;
+}
+.hot-goods-content-item-info{
+    width: 308rpx;
+    margin: 0 auto;
+}
+.hot-goods-content-item-name{
+    width: 100%;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #333333;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical !important;
+    font-weight: bold;
+    overflow: hidden;
+}
+.sale-num{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 16rpx;
+    justify-content: space-between;
+}
+.sale-num-left{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #333333;
+}
+.sale-num-right{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #333333;
+}
+.sale-num-left text{
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #D53333;
+    font-weight: bold;
+}

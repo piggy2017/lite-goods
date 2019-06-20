@@ -1,0 +1,19 @@
+<view class="container" wx:if="{{couponList.length===0}}">
+    <view class="container-kong">
+        <image src="http://img.tracenet.cn/bg12.png"></image>
+    </view>
+    <view class='coupon-none'>您当前没有优惠券</view>
+</view>
+<view wx:else>
+    <view class="coupon-item" wx:for="{{couponList}}" wx:key="{{item.id}}" wx:if="{{item.coupon_status==1 || item.coupon_status==3}}">
+        <view class="coupon-item-top" wx:if="{{item.coupon_status==1}}">
+            <view class="price">￥<text>{{item.name}}</text></view>
+            <view class="use-btn" data-names="{{item.name}}" data-name="{{item.type_money}}" data-id="{{item.id}}" bindtap='useConupon'>去使用</view>
+        </view>
+         <view class="coupon-item-top" wx:if="{{item.coupon_status==3}}">
+            <view class="guoqi">￥<text>{{item.name}}</text></view>
+            <view class="guoqi-right">已过期</view>
+        </view>
+        <view class="coupon-time">{{item.use_start_date}}-{{item.use_end_date}}</view>
+    </view>
+</view>

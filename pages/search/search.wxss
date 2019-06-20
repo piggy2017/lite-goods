@@ -1,0 +1,152 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.search-view{
+    width: 100%;
+    height: 92rpx;
+    background-color:#D53333;
+    padding-top: 20rpx;
+}
+.search-content{
+    width: 690rpx;
+    height: 72rpx;
+    margin: 0 auto 0 auto;
+    border-radius: 8rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.vip-back{
+    font-weight: bold;
+}
+.back{
+    width: 90rpx;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background: #B91717;
+    position: relative;
+}
+.back::after{
+    position: absolute;
+    content: "";
+    z-index: 9;
+    right: 2rpx;
+    height: 40rpx;
+    width: 1rpx;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 17rpx;
+}
+ .back image{
+     width: 16rpx;
+     height: 30rpx;
+}
+.search-input{
+    background: #B91717;
+    width: 600rpx;
+    height: 100%;
+    padding-left: 20rpx;
+    color: #fff;
+    font-size: 28rpx;
+}
+.search-placeholder{
+    opacity: 0.5;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #FFFFFF;
+}
+.container-kong{
+    margin: 320rpx auto 0 auto;
+    width: 272rpx;
+    height: 240rpx;
+}
+.container-kong image{
+    width: 272rpx;
+    height: 240rpx;
+}
+.coupon-none{
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #f08d7e;
+}
+.hot-goods-content{
+    width: 690rpx;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto 0 auto;
+}
+.hot-goods-content-item{
+    width: 340rpx;
+    height: auto;
+    background-color: #fff;
+    margin-top: 20rpx;
+    padding-bottom: 20rpx;
+    border-radius: 8rpx;
+}
+.hot-goods-content-item:nth-child(2n){
+    margin-left: 10rpx;
+}
+.hot-goods-content-item-url{
+    width: 340rpx;
+}
+
+.hot-goods-content-item-url image{
+    width: 340rpx;
+    height: 340rpx;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+.hot-goods-content-item-info{
+    width: 308rpx;
+    margin: 0 auto;
+}
+.hot-goods-content-item-name{
+    width: 100%;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #333333;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    text-align: left;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical !important;
+    font-weight: bold;
+    overflow: hidden;
+}
+.vip-back-left{
+    font-family: PingFangSC-Semibold;
+    font-size: 20rpx;
+    color: #FFFFFF;
+    background: #D54141;
+    border-radius: 4rpx;
+    padding: 8rpx 10rpx;
+}
+.vip-back-right{
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #DF9819;
+    margin-left: 10rpx;
+}
+.sale-num{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 16rpx;
+    justify-content: space-between;
+}
+.sale-num-left{
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #D53333;
+    font-weight: bold;
+}
+.sale-num-right{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #999999;
+}

@@ -1,0 +1,122 @@
+<view class="refund-money">
+    <view class="order-detail-top wait-audit" wx:if="{{goodsInfo.status==0}}">
+        <view class="order-detail-top-wait-pay">已提交退货退款申请</view>
+        <view class="order-detail-time order-detail-time-next">
+            <text>等待商家审核</text>
+        </view>
+    </view>
+
+    <view class="order-detail-top refund-seccess" wx:elif="{{goodsInfo.status==4}}">
+        <view class="order-detail-top-wait-pay">退款成功</view>
+        <view class="order-detail-time order-detail-time-next">
+            <text>退款成功</text>
+        </view>
+    </view>
+    <view class="order-detail-top refund-fail" wx:elif="{{goodsInfo.refundSuccess==1 && goodsInfo.status==5}}">
+        <view class="order-detail-top-wait-pay">交易关闭</view>
+        <view class="order-detail-time order-detail-time-next">
+            <text>退款失败</text>
+        </view>
+    </view>
+    <view class="order-detail-top refund-seccess" wx:elif="{{goodsInfo.refundSuccess==0 && goodsInfo.status==5}}">
+        <view class="order-detail-top-wait-pay">交易关闭</view>
+        <view class="order-detail-time order-detail-time-next">
+            <text>退款成功</text>
+        </view>
+    </view>
+
+    <view class="order-detail-top refund-fail" wx:elif="{{goodsInfo.status==2 || goodsInfo.status==201 || goodsInfo.status==202}}">
+        <view class="order-detail-top-wait-pay">商家拒绝退款</view>
+        <view class="order-detail-time order-detail-time-next">
+            <text>{{goodsInfo.rejectContent}}</text>
+        </view>
+    </view>
+
+    <view class="order-detail-top wait-audit" wx:else>
+        <view class="order-detail-top-wait-pay">商家同意退款</view>
+        <view class="order-detail-time order-detail-time-next">
+            <text>正退款到您的账户</text>
+        </view>
+    </view>
+    <view class="order-detail-content">
+        <view class="order-detail-info">
+            <navigator url="../../goods/goods?id={{goodsInfo.goodsId}}" class="order-detail-url">
+                <view class="order-detail-url-left">
+                    <image src="{{goodsInfo.listPicUrl}}"></image>
+                </view>
+                <view class="order-detail-url-right">
+                    <view class="goods-detail-left">
+                        <view class="goods-detail-name">{{goodsInfo.goodsName}}</view>
+                        <view class="goods-detail-si" wx:if="{{goodsInfo.goodsSpecifitionNameValue!=null && goodsInfo.goodsSpecifitionNameValue!=''}}">
+                            {{goodsInfo.goodsSpecifitionNameValue}}
+                        </view>
+                        <view class="goods-detail-si" wx:else>默认规格</view>
+                    </view>
+                    <view class="goods-detail-right">
+                        <view class="goods-detail-right-price">￥{{goodsInfo.retailPrice}}</view>
+                        <view class="goods-detail-right-num mar-top-10">X{{goodsInfo.number}}</view>
+                    </view>
+                </view>
+            </navigator>
+            <view class="order-cell mar-top-12">
+                <text class="order-cell-left">退回渠道：</text>
+                <!-- <text class="order-cell-right" wx:if="{{goodsInfo.price!=0 && goodsInfo.walletPrice==0}}">微信</text>
+                <text class="order-cell-right" wx:elif="{{goodsInfo.price!=0 && goodsInfo.walletPrice!=0}}">微信+钱包</text>
+                <text class="order-cell-right" wx:elif="{{goodsInfo.price==0 && goodsInfo.walletPrice!=0}}">钱包</text>
+                <text class="order-cell-right" wx:elif="{{goodsInfo.goldCoinPice!=0}}">金币</text> -->
+                <text class="order-cell-right" wx:if="{{goodsInfo.price!=0}}">微信</text>
+                <text class="order-cell-right" wx:if="{{goodsInfo.walletPrice!=0}}">零钱</text>
+                <text class="order-cell-right" wx:if="{{goodsInfo.goldCoinPice!=0}}">金币</text>
+            </view>
+            <view class="order-cell" wx:if="{{goodsInfo.price!=0}}">
+                <text class="order-cell-left">退款金额：</text>
+                <text class="order-cell-right">￥{{goodsInfo.price}}</text>
+            </view>
+            <view class="order-cell" wx:if="{{goodsInfo.walletPrice!=0}}">
+                <text class="order-cell-left">退款钱包：</text>
+                <text class="order-cell-right">￥{{goodsInfo.walletPrice}}</text>
+            </view>
+            <view class="order-cell" wx:if="{{goodsInfo.goldCoinPice!=0}}">
+                <text class="order-cell-left">退款金币：</text>
+                <text class="order-cell-right">{{goodsInfo.goldCoinPice*100}}个</text>
+            </view>
+            <view class="order-cell">
+                <text class="order-cell-left">退款时间：</text>
+                <text class="order-cell-right">{{goodsInfo.addTime}}</text>
+            </view>
+            <view class="order-cell">
+                <text class="order-cell-left">退款编码：</text>
+                <text class="order-cell-right ">{{goodsInfo.refundSn}}</text>
+            </view>
+        </view>
+        <view class="my-post">
+            <!-- <view class="my-post-imglist" wx:if="{{refundPictureList.length>0}}">
+                <image src="{{item.picUrl}}" bindtap='previewImage' data-src="{{item.picUrl}}" data-id="{{item.id}}" 
+                wx:for="{{refundPictureList}}" wx:key="{{item.id}}"></image>
+            </view> -->
+            <view class="post-refund-reason">
+                <text class="post-refund-reason-label">退款原因：</text>
+                <text>{{refundReason.content}}</text>
+            </view>
+            <view class="post-refund-reason reject-refund" wx:if="{{goodsInfo.refundSuccess==1 && goodsInfo.status==5 && goodsInfo.rejectContent!=''}}">
+                <text class="post-refund-reason-label">商家回复：</text>
+                <text>{{goodsInfo.rejectContent}}</text>
+            </view>
+        </view>
+        <view class="post-range step-wait-audit">
+            <scroll-view class="scroll-view_hot" scroll-x="true">
+                <image src="../../../static/images/only-money-1.png" wx:if="{{goodsInfo.status==0}}"></image>
+                <image src="../../../static/images/only-money-4.png" wx:elif="{{goodsInfo.status==2}}"></image>
+                <image src="../../../static/images/only-money-4.png" wx:elif="{{goodsInfo.status==5 && goodsInfo.refundSuccess==1}}"></image>
+                <image src="../../../static/images/only-money-3.png" wx:elif="{{goodsInfo.status==5 && goodsInfo.refundSuccess==0}}"></image>
+                <image src="../../../static/images/only-money-3.png" wx:elif="{{goodsInfo.status==4}}"></image>
+                <image src="../../../static/images/only-money-2.png" wx:else></image>
+            </scroll-view>
+        </view>
+        <view class="call-kefu" bindtap='call'>
+            <image src="../../../static/images/phone.png"></image>
+            <text>联系商家</text>
+        </view>
+    </view>
+    <view wx:if="{{canRefundResult.canRefund==true}}" class="refund-argin" bindtap='refundArgin' data-goodsid="{{goodsInfo.goodsId}}" data-productid="{{goodsInfo.productId}}" data-id="{{goodsInfo.orderId}}">再次申请</view>
+</view>

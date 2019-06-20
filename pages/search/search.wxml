@@ -1,0 +1,38 @@
+<view>
+    <view class="search-view">
+        <view class="search-content">
+            <view class="back" bindtap='goback'>
+                <image src="../../static/images/return.png"></image>
+            </view>
+            <input class="search-input" type="search" placeholder-class="search-placeholder" bindinput="bindKeyInput" value="{{search}}" focus="true" placeholder='输入商品名称搜索' bindconfirm="search"></input>
+        </view>
+    </view>
+    <view class="wraper" wx:if="{{hotGoods.length===0}}">
+         <view class="container-kong">
+            <image src="http://img.tracenet.cn/bg15.png"></image>
+        </view>
+        <view class='coupon-none'>未找到相关商品</view>
+    </view>
+    <view class="wraper" wx:else>
+        <view class="hot-goods-content">
+            <view class="hot-goods-content-item" wx:for="{{hotGoods}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+                <navigator url="../goods/goods?id={{item.id}}" class="hot-goods-content-item-url">
+                    <image src="{{item.list_pic_url}}"></image>
+                    <view class="hot-goods-content-item-info">
+                        <view class="hot-goods-content-item-name">{{item.name}}</view>
+                        <view class="vip-back">
+                            <text class="vip-back-left">返利:￥{{item.rebate_price}}</text>
+                            <text class="vip-back-right">+ {{item.sub_rebate_price}}(会员)</text>
+                        </view>
+                        <view class="sale-num">
+                            <view class="sale-num-left">￥{{item.retail_price}}</view>
+                            <view class="sale-num-right">已售:{{item.sell_volume}}</view>
+                        </view>
+                    </view>
+
+                </navigator>
+            </view>
+        </view>
+    </view>
+
+</view>

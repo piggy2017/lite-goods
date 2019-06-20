@@ -1,0 +1,20 @@
+<view>
+    <view class="coupon-item" wx:for="{{couponList}}" wx:key="{{item.id}}">
+        <view class="coupon-item-top">
+            <view class="price">￥<text>{{item.name}}</text></view>
+            <view class="use-btn" data-number="{{item.coupon_number}}" data-money="{{item.type_money}}" data-name="{{item.name}}" data-id="{{item.id}}" bindtap='useConupon'>去使用</view>
+        </view>
+        <view class="coupon-time">{{item.use_start_date}}-{{item.use_end_date}}</view>
+    </view>
+
+     <view class="coupon-item" wx:for="{{couponOtherList}}" wx:key="{{item.id}}">
+        <view class="coupon-item-top">
+             <view class="guoqi">￥<text>{{item.name}}</text></view>
+            <view class="guoqi-right">不可用</view>
+        </view>
+        <view class="coupon-time">{{item.use_start_date}}-{{item.use_end_date}}</view>
+    </view>
+
+
+</view>
+

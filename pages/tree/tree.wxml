@@ -1,0 +1,118 @@
+<view class="tree">
+    <view class="tree-top">
+        <view class="surplus-number">
+            <view class="tree-top-title">剩余领取次数</view>
+            <view class="surplus-number-view">
+                <view class="text-green">{{shakeCount}}次</view>
+                <image src="../../static/images/gold-add.png" bindtap='goShare'></image>
+                <!-- <view class="surplus-number-view-btn" bindtap='goShare'>+</view> -->
+                <!-- <button open-type='share' class="surplus-number-view-btn" data-type="add">+</button> -->
+            </view>
+        </view>
+        <view class="continuous-sign">
+            <view class="tree-top-title">连续签到天数</view>
+            <view class="surplus-number-view">
+                <view class="text-fff">{{continuousDay}}天</view>
+                <image src="../../static/images/tree-rules.png" bindtap='viewRule'></image>
+            </view>
+        </view>
+        <view class="tree-top-right">
+            <view class="tree-top-right-tit">我的金币：<text class="yellow">{{goldCount}}</text></view>
+            <view class="gold-area-btn" bindtap='goGoldList'>
+                <image src="../../static/images/gold-area.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="progress-view">
+        <view class="time-content" wx:if="{{complete!=true}}">
+            <view class="hr"></view>
+            <view class="time-content-b">
+                <view class="time">{{min}}:{{miao}}</view>
+                <view class="label">后恢复一次</view>
+            </view>
+        </view>
+        <view class="time-content-2" wx:else>
+            满血状态，赶紧摇树
+        </view>
+        <view class="progress-content" wx:if="{{complete!=true}}">
+            <progress percent="60" border-radius="6rpx" activeColor=" #B4F658" backgroundColor="#0D4AA0"></progress>
+        </view>
+    </view>
+    <view class="position-img">
+        <view class="position-img-gold {{hasShake==true?'golddown':''}}" >
+            <image src="../../static/images/big-gold-2.png"></image>
+        </view>
+        <view class="position-img-gold-2 {{hasShake==true?'golddown-2':''}}">
+            <image src="../../static/images/big-gold-2.png"></image>
+        </view>
+        <view class="position-img-gold-3 {{hasShake==true?'golddown-3':''}}">
+            <image src="../../static/images/big-gold-2.png"></image>
+        </view>
+        <view class="tree-content"  bindtap='shake'>
+            <image src="../../static/images/tree-click.png"></image>
+        </view>
+        <view class="prompt {{hasShake==true?'faded':''}}">+{{addNum}}</view>
+    </view>
+            <view class="day-task">
+            <view class="day-task-title">每日任务</view>
+            <scroll-view class="scroll-view_hot" scroll-x="true" bindscroll="scroll">
+                <view class="scroll-view_hot-item" bindtap="switchCate"  wx:if="{{goldSingInfo.sign===false}}">
+                    <view class="scroll-view_hot-item-wraper">
+                        <image class="item-image" src="../../static/images/day-qiandao.png"></image>
+                        <text class="font-weight">今日签到</text>
+                        <view class="day-task-bottom" bindtap='signDay'>
+                            <text>+{{treeInfo.signCount}}</text>
+                            <image src="../../static/images/small-gold.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="scroll-view_hot-item">
+                    <view class="scroll-view_hot-item-wraper">
+                        <image class="item-image" src="../../static/images/gold-wish.png"></image>
+                        <text class="font-weight">愿望清单</text>
+                        <view class="day-task-bottom">
+                            <text>+{{treeInfo.wishGold}}</text>
+                            <image src="../../static/images/small-gold.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="scroll-view_hot-item">
+                    <view class="scroll-view_hot-item-wraper">
+                        <image class="item-image" src="../../static/images/gold-shoping.png"></image>
+                        <text class="font-weight">购买商品</text>
+                        <view class="day-task-bottom">
+                            <text>+{{treeInfo.shoppingGold}}</text>
+                            <image src="../../static/images/small-gold.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="scroll-view_hot-item">
+                    <view class="scroll-view_hot-item-wraper">
+                        <image class="item-image" src="../../static/images/gold-shoping.png"></image>
+                        <text class="font-weight">拼团抽奖</text>
+                        <view class="day-task-bottom">
+                            <text>+{{treeInfo.groupGold}}</text>
+                            <image src="../../static/images/small-gold.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+</view>
+<view class="rule-mode {{ruleShow===false?'hidden':''}}" bindtap='closeRule'>
+    <view class="rule-wraper">
+        <view class="rules-content" catchtap="noThing">
+            <view class="rules-content-title">连续签到说明</view>
+            <view class="rules-content-bottom">
+                <view class="rule-mode-tishi">连续签到将获得以下金币奖励倍数</view>
+                <view class="rules-list">
+                    <view class="rules-itenm" wx:for="{{signRules}}" wx:key="{{item.id}}">
+                        <view class="bg-gold">x{{item.multiple}}</view>
+                        <view class="rules-itenm-text">{{item.continuousDay}} 天</view>
+                    </view>
+                </view>
+                <view class="i-know" catchtap='closerules'>我知道了</view>
+            </view>
+        </view>
+    </view>
+</view>

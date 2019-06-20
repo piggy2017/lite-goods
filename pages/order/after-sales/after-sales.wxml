@@ -1,0 +1,82 @@
+<view class="wraper" wx:if="{{refundList.length===0}}">
+    <view class="container-kong">
+        <image src="http://img.tracenet.cn/bg14.png"></image>
+    </view>
+    <view class='coupon-none'>您还没有此类订单</view>
+</view>
+<view class="wraper" wx:else>
+    <view class="after-sales">
+        <view class="my-order-item" wx:for="{{refundList}}" wx:key="{{item.id}}">
+            <view class="my-order-item-title">
+                <view class="my-order-item-title-left">
+                    <image src="../../../static/images/time.png"></image>
+                    <text>{{item.addTime}}</text>
+                </view>
+                <view class="my-order-item-title-right title-red" wx:if="{{item.status==0}}">
+                    已提交退款申请
+                </view>
+                <view class="my-order-item-title-right title-red" wx:elif="{{item.status==2 || item.status==201 || item.status==202}}">
+                    商家拒绝退款
+                </view>
+                <view class="my-order-item-title-right" wx:elif="{{item.status==4}}">
+                    退款成功
+                </view>
+                <view class="my-order-item-title-right" wx:elif="{{item.status==5}}">
+                    已关闭
+                </view>
+            </view>
+            <view class="my-order-item-content">
+                <navigator url="../refund-detail/refund-detail?refundId={{item.id}}" class="my-order-item-content-url" wx:if="{{item.type==1}}">
+                    <view class="my-order-item-content-left">
+                        <image src="{{item.listPicUrl}}"></image>
+                    </view>
+                    <view class="my-order-item-content-right">
+                        <view class="my-order-goods-left">
+                            <view class="my-order-goods-name">{{item.goodsName}}</view>
+                            <view class="my-order-goods-speci" wx:if="{{item.goodsSpecifitionNameValue==null || item.goodsSpecifitionNameValue==''}}">默认规格</view>
+                            <view class="my-order-goods-speci" wx:else>{{item.goodsSpecifitionNameValue}}</view>
+                        </view>
+                        <view class="my-order-goods-right">
+                            <view class="unit-price">￥{{item.retailPrice}}</view>
+                            <view class="goods-num">x{{item.number}}</view>
+                        </view>
+                    </view>
+                </navigator>
+                <navigator url="../refund-money-detail/refund-money-detail?refundId={{item.id}}" class="my-order-item-content-url" wx:elif="{{item.type==0}}">
+                    <view class="my-order-item-content-left">
+                        <image src="{{item.listPicUrl}}"></image>
+                    </view>
+                    <view class="my-order-item-content-right">
+                        <view class="my-order-goods-left">
+                            <view class="my-order-goods-name">{{item.goodsName}}</view>
+                            <view class="my-order-goods-speci" wx:if="{{item.goodsSpecifitionNameValue==null || item.goodsSpecifitionNameValue==''}}">默认规格</view>
+                            <view class="my-order-goods-speci" wx:else>{{item.goodsSpecifitionNameValue}}</view>
+                        </view>
+                        <view class="my-order-goods-right">
+                            <view class="unit-price">￥{{item.retailPrice}}</view>
+                            <view class="goods-num">x{{item.number}}</view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <view class="my-order-item-bot">
+                <view class="total-price">
+                    <text class="total-price-left">共<text>{{item.number}}</text>件商品，合计</text>
+                    <text class="total-price-right">¥{{item.retailPrice*item.number}}</text>
+                </view>
+                <view class="my-order-item-btn">
+                    <view class="my-order-item-btn-tishi" wx:if="{{item.status==0}}">已提交等待商家审核</view>
+                    <view class="my-order-item-btn-tishi" wx:if="{{item.status==101}}">商家同意退款，完善快递信息</view>
+                    <view class="my-order-item-btn-tishi" wx:if="{{item.status==102}}">等待商家确认商品</view>
+                    <view class="my-order-item-btn-tishi" wx:if="{{item.status==2 || item.status==201 || item.status==202}}">
+
+                    </view>
+                    <view class="my-order-item-btn-tishi" wx:if="{{item.status==3}}">商家确认无误退款中</view>
+                    <view class="my-order-item-btn-tishi" wx:if="{{item.status==4}}">已退回到您的零钱中</view>
+                    <view class="my-order-item-btn-tishi" wx:else></view>
+                    <view class="cancel-order order-btn" bindtap='orderDetail' data-id="{{item.id}}" data-type="{{item.type}}">查看详情</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

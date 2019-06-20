@@ -1,0 +1,40 @@
+<view class="container">
+  <!-- <view class="withdrawal-item">
+        <view class="withdrawal-item-top">
+            <view>提现申请成功</view>
+            <view class="text-red">¥50.00</view>
+        </view>
+        <view class="withdrawal-item-time">
+            <text>申请时间：</text>
+            <text class="color-ddd">2019-09-21  18:30:00</text>
+        </view>
+         <view class="withdrawal-item-time-2">
+            <text>预计到账：</text>
+            <text class="color-ddd">1-3个工作日</text>
+        </view>
+    </view> -->
+
+  <view class="withdrawal-item" wx:for="{{tixianList}}" wx:key="{{item.id}}">
+    <view class="withdrawal-item-top">
+      <view wx:if="{{item.status==0}}">提现申请成功</view>
+      <view wx:if="{{item.status==1}}">提现成功</view>
+      <view wx:if="{{item.status==2}}">提现申请失败</view>
+      <view class="text-red">¥{{item.amount}}</view>
+    </view>
+    <view class="withdrawal-item-time">
+      <text>申请时间：</text>
+      <text class="color-ddd">{{item.createDate}}</text>
+    </view>
+    <view class="withdrawal-item-time-2" wx:if="{{item.status==0}}">
+      <text>预计到账：</text>
+      <text class="color-ddd">1-3个工作日</text>
+    </view>
+   <view class="withdrawal-item-time-2" wx:if="{{item.status==2}}">
+      <text>审批失败：{{item.remarks}}</text>
+    </view>
+    <view class="withdrawal-item-time-2" wx:if="{{item.status==1}}">
+      <text>处理时间：</text>
+      <text class="color-ddd">{{item.dealDate}}</text>
+    </view>
+  </view>
+</view>

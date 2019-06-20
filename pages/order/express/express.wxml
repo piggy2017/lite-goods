@@ -1,0 +1,22 @@
+<view class="express-con">
+    <view class="express-con-hr" wx:if="{{type!='lottery'}}"></view>
+    <view class="express-con-top"  wx:if="{{type=='lottery'}}">
+        <view class="top-text">
+            <image src="../../../static/images/location.png"></image>
+            <view class="top-text-right">
+                <view class="top-name">
+                    <text>{{userInfo.userName}}</text>
+                    <text class="margin-30">{{userInfo.userPhone}}</text>
+                </view>
+                <view class="location">{{userInfo.address}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="express-con-list">
+         <view class="express-con-item" wx:for="{{expressList}}" wx:key="{{item.context}}">
+            <view class="express-con-item-title">{{item.context}}</view>
+            <view class="express-con-item-time">{{item.time}}</view>
+        </view>
+    </view>
+    
+</view>

@@ -1,0 +1,124 @@
+
+<!--index.wxml-->
+<view class="container">
+    <view class="scroll-top">
+        <scroll-view class="scroll-view_hot" scroll-x="true" bindscroll="scroll">
+            <!-- <view class="scroll-view_hot-item scroll-view_hot-item-active">热卖</view> -->
+            <view class="scroll-view_hot-item {{ currentCategory.id == item.id ? 'scroll-view_hot-item-active' : ''}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{navList}}" bindtap="switchCate" wx:key="id">
+                {{item.name}}
+            </view>
+        </scroll-view>
+    </view>
+
+    <swiper class="banner" circular="true" indicator-dots="true" autoplay="true" indicator-active-color="#fff" interval="3000" duration="1000">
+        <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}" class="index-swiper-item">
+            <view data-link='{{item.link}}' data-type='{{item.media_type}}' bindtap='linkTo' class="swiper-item-navigator">
+                <image src="{{item.image_url}}" background-size="cover"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="hr-bg"></view>
+    <view class="classification">
+        <view class="classification-list">
+            <navigator url="../postage/list/list" class="classification-list-url youfei">
+                <image src="../../static/images/postage.png"></image>
+                <view>付邮得物</view>
+            </navigator>
+        </view>
+        <view class="classification-list">
+            <navigator url="../wish/wish-list/wish-list" class="classification-list-url youfei">
+                <image src="../../static/images/wish.png"></image>
+                <view>愿望清单</view>
+            </navigator>
+        </view>
+        <view class="classification-list">
+            <navigator url="../lottery/lottery-list/lottery-list" class="classification-list-url youfei">
+                <image src="../../static/images/zere-choujiang.png"></image>
+                <view>0元抽奖</view>
+            </navigator>
+        </view>
+        <view class="classification-list">
+            <navigator url="../gold/list/list" class="classification-list-url youfei">
+                <image src="../../static/images/gold-icon.png"></image>
+                <view>金币专区</view>
+            </navigator>
+        </view>
+        <view class="classification-list">
+            <navigator url="../search/search" class="classification-list-url youfei">
+                <image src="../../static/images/search.png"></image>
+                <view>商品搜索</view>
+            </navigator>
+        </view>
+    </view>
+    <!-- 活动区域 -->
+    <view class="activity">
+        <view class='activity_one' wx:if="{{activity_one!=null&&activity_one.name!=null}}">
+            <navigator url="{{activity_one.link}}">
+                <image class='activity_one_img' src="{{activity_one.image_url}}"></image>
+            </navigator>
+        </view>
+        <view class='activity_two' wx:if="{{activity_two!=null&&activity_two.name!=null}}">
+            <navigator url="{{activity_two.link}}">
+                <image class='activity_two_img' src="{{activity_two.image_url}}"></image>
+            </navigator>
+        </view>
+    </view>
+    <!-- 热卖商品 -->
+    <view class="hot-goods">
+        <view class="hot-goods-title">
+            <view class="hot-goods-title-left">
+                <image src="../../static/images/hot-goods.png"></image>
+                <text>热卖商品</text>
+            </view>
+            <!-- <view class="hot-goods-title-right">
+                <text>查看更多</text>
+                <image src="../../static/images/more.png"></image>
+            </view> -->
+        </view>
+        <view class="hot-goods-content">
+            <view class="hot-goods-content-item" wx:for="{{hotGoods}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+                <navigator url="../goods/goods?id={{item.id}}" class="hot-goods-content-item-url">
+                    <image src="{{item.list_pic_url}}"></image>
+                    <view class="hot-goods-content-item-info">
+                        <view class="hot-goods-content-item-name">{{item.name}}</view>
+                        <view class="vip-back">
+                            <text class="vip-back-left">返利:￥{{item.rebate_price}}</text>
+                            <text class="vip-back-right">+ ￥{{item.sub_rebate_price}}(会员)</text>
+                        </view>
+                        <view class="sale-num">
+                            <view class="sale-num-left">￥{{item.retail_price}}</view>
+                            <view class="sale-num-right">已售:{{item.sell_volume}}</view>
+                        </view>
+                    </view>
+
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>
+
+<!-- banner⼴广告，按需引⼊入 -->
+<view class="wl_banner" style="background: #fff;color:#333;">
+    <wl-ad data-id="{{wlad.ad.banner[0]}}" adData="{{wlad.adData}}" bindclick="wladClick" bindclose="wladClose" class="wl_component">
+    </wl-ad>
+</view>
+<!-- 插屏⼴广告，按需引⼊入 -->
+<!-- <view class="wl_insert">
+    <wl-ad data-id="{{wlad.ad.insert}}" adData="{{wlad.adData}}" bindclick="wladClick" bindclose="wladClose" class="wl_component">
+    </wl-ad>
+</view> -->
+<!-- 悬浮⼴广告，按需引⼊入 -->
+<!-- <view class="wl_fixed">
+    <wl-ad data-id="{{wlad.ad.fixed}}" adData="{{wlad.adData}}" bindclick="wladClick" bindclose="wladClose" class="wl_component">
+    </wl-ad>
+</view> -->

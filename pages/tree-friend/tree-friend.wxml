@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="play" bindtap='goTree'>
+        我也要玩
+        <!-- <image src="../../static/images/me-play.png"></image> -->
+    </view>
+    <view class="info-wraper">
+        <view class="info">
+            <view class="user-pic">
+                <image src="{{shakeUser.avatar}}"></image>
+            </view>
+            <view class="user-name">{{shakeUser.nickname}}</view>
+            <view class="shuzhi">
+                <image src="../../static/images/shuzhi.png"></image>
+            </view>
+            <view class="tishi">
+                <image class="image-left" src="../../static/images/line.png"></image>
+                <text>每天只能为好友助力一次哟</text>
+                <image  class="image-right" src="../../static/images/line.png"></image>
+            </view>
+        </view>
+        <view class="dagu" bindtap='help'>
+            <view class="dagu-wraper">
+                <image src="../../static/images/dagu.png"></image>
+                <view class="success {{hasShake==true?'golddown':''}}">
+                    <image src="http://img.tracenet.cn/bg17.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+</view>

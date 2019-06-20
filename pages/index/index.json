@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wl-ad": "/components/wlAD/wlAD"
+}
+}

@@ -1,0 +1,134 @@
+page{
+    background: #FFEDDC;
+    width: 100%;
+    min-height: 100%;
+    font-family: PingFangSC-Regular;
+}
+.subject-content{
+    width: 100%;
+}
+.subject-top-img{
+    width: 100%;
+    height: 1022rpx;
+}
+.subject-top-img image{
+    width: 100%;
+    height: 100%;
+}
+.subject-title{
+    width: 472rpx;
+    height: 32rpx;
+    margin: 0 auto;
+}
+.subject-title image{
+    width: 100%;
+    height: 100%;
+}
+.subject-item{
+    width: 702rpx;
+    height: 300rpx;
+    background-color: #fff;
+    border: 4rpx solid #FF9F83;
+    box-shadow: 0 10rpx 30rpx 0 rgba(199,107,20,0.25);
+    border-radius: 12rpx;
+    margin: 40rpx auto;
+    box-sizing: border-box;
+    padding: 30rpx;
+}
+.subject-item-url{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.subject-item-pic{
+    width: 240rpx;
+    height: 240rpx;
+    border-radius: 8rpx;
+}
+.subject-item-right{
+    width: 370rpx;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.goods-name{
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing:2.16rpx;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden;
+    font-weight: bold;
+}
+.fanli{
+    display: flex;
+    flex-flow: row nowrap;
+    font-weight: bold;
+    align-items: center;
+
+}
+.vip-back-left {
+  font-family: PingFangSC-Semibold;
+  font-size: 20rpx;
+  color: #fff;
+  background: #d54141;
+  border-radius: 4rpx;
+  padding: 8rpx 10rpx;
+}
+
+.vip-back-right {
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #df9819;
+  margin-left: 10rpx;
+}
+.goods-price{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.sale-num-left {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #d53333;
+  font-weight: bold;
+}
+
+.sale-num-right {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #999;
+}
+.nav-top{
+    width: 72rpx;
+    height: 264rpx;
+    position: fixed;
+    z-index: 9;
+    bottom: 100rpx;
+    right: 20rpx;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.share-icon-1{
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+    padding: 0;
+      box-shadow: rgb(199, 107, 20,0.25) 0 10rpx 30rpx 0;
+}
+.share-icon-1::after{
+    border: none;
+}
+.nav-top image{
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+    box-shadow: rgb(199, 107, 20,0.25) 0 10rpx 30rpx 0;
+}

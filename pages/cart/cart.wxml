@@ -1,0 +1,97 @@
+<view class="container" wx:if="{{cartList.length===0}}">
+    <view class="container-kong">
+        <image src="http://img.tracenet.cn/bg13.png"></image>
+    </view>
+    <view class='guangguang' bindtap='guang'>去逛逛吧</view>
+</view>
+<view class="container" wx:else>
+    <view class="cart-bg">
+        <view class="cart-bg-num">共{{num}}件宝贝</view>
+        <view class="cart-bg-text" wx:if="{{hasGuanLi===false}}" bindtap='management'>管理</view>
+        <view class="cart-bg-text" wx:if="{{hasGuanLi===true}}" bindtap='done'>完成</view>
+    </view>
+    <view class="cart-list">
+        <scroll-view scroll-y="true" class="cart-list-scroll">
+            <view class="cart-item" wx:for="{{cartList}}" wx:key="item.id">
+
+                <navigator url="../goods/goods?id={{item.goods_id}}" class="cart-item-url" wx:if="{{item.goodsIsNoSell==1}}">
+                    <view class="cart-item-left">
+                        <image src="{{item.list_pic_url}}"></image>
+                        <view class="shouwan" wx:if="{{item.productNumber==0}}">已售罄</view>
+                    </view>
+                    <view class="cart-item-right">
+                        <view class="cart-item-name">{{item.goods_name}}</view>
+                        <view class="cart-item-specifications" wx:if="{{item.goods_specifition_name_value!=null}}">{{item.goods_specifition_name_value}}</view>
+                        <view class="cart-item-specifications" wx:else>默认规格</view>
+                    </view>
+                </navigator>
+                <!-- 如果商品下架，无法进入商品详情页 -->
+                <navigator url="" class="cart-item-url" wx:elif="{{item.goodsIsNoSell==0}}">
+                    <view class="cart-item-left">
+                        <image src="{{item.list_pic_url}}"></image>
+                        <view class="xiajia">已下架</view>
+                    </view>
+                    <view class="cart-item-right">
+                        <view class="cart-item-name">{{item.goods_name}}</view>
+                        <view class="cart-item-specifications" wx:if="{{item.goods_specifition_name_value!=null}}">{{item.goods_specifition_name_value}}</view>
+                        <view class="cart-item-specifications" wx:else>默认规格</view>
+                    </view>
+                </navigator>
+                <view class="cart-item-bot" wx:if="{{item.goodsIsNoSell==1 && item.productNumber>0}}">
+                    <view class="cart-item-price">￥{{item.retail_price}}</view>
+                    <view class="cart-item-computed">
+                        <view class="reduce-num" bindtap='reduce' data-check="{{item.choose}}" data-id="{{item.id}}">
+                            <image src="../../static/images/reduce.png"></image>
+                        </view>
+                        <view class="cart-item-number">{{item.number}}</view>
+                        <view class="add-num" bindtap='add' data-check="{{item.choose}}" data-id="{{item.id}}">
+                            <image src="../../static/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <!-- 如果商品下架或者商品库存为0，不可进行数量加减 -->
+                <view class="cart-item-bot" wx:elif="{{item.goodsIsNoSell==0 || item.productNumber==0}}">
+                    <view class="cart-item-price">￥{{item.retail_price}}</view>
+                    <view class="cart-item-computed">
+                        <view class="reduce-num" data-check="{{item.choose}}" data-id="{{item.id}}">
+                            <image src="../../static/images/reduce.png"></image>
+                        </view>
+                        <view class="cart-item-number">{{item.number}}</view>
+                        <view class="add-num" data-check="{{item.choose}}" data-id="{{item.id}}">
+                            <image src="../../static/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <!-- 如果商品。商品库存正常 -->
+                <checkbox-group bindchange="chooseGoods" data-id="{{item.id}}" data-price="{{item.retail_price}}" data-number="{{item.number}}" data-sall="1" class="cart-item-checkbox" wx:if="{{item.goodsIsNoSell==1 && item.productNumber>0}}">
+                    <label class="checkbox">
+                        <checkbox value="{{item.id}}" class="my-checkbox" checked="{{item.choose}}" />
+                    </label>
+                </checkbox-group>
+                <!-- 如果商品下架或者商品库存为0-->
+                <checkbox-group bindchange="chooseGoods" data-id="{{item.id}}" data-price="{{item.retail_price}}" data-number="{{item.number}}" data-sall="0" class="cart-item-checkbox" wx:elif="{{item.goodsIsNoSell==0 || item.productNumber==0}}">
+                    <label class="checkbox">
+                        <checkbox value="{{item.id}}" class="my-checkbox" checked="{{item.choose}}" />
+                    </label>
+                </checkbox-group>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="cart-btn">
+        <checkbox-group bindchange="chooseAll" class="cart-btn-left">
+            <view class="bottom-checkbox">
+                <label class="checkbox">
+                    <checkbox value="dd" class="ws-checkbox" checked="{{checkAll}}" />
+                </label>
+            </view>
+            <view class="cart-btn-left-choose">已选{{choosed}}件</view>
+        </checkbox-group>
+        <view class="cart-btn-right">
+            <view class="price-total" wx:if="{{hasGuanLi===false}}">合计:
+                <text class="red">￥{{getTotalPrice}}</text>
+            </view>
+            <view class="go-to-pay" wx:if="{{hasGuanLi===false}}" bindtap='settlement'>结算</view>
+            <view class="goods-delete" wx:if="{{hasGuanLi===true}}" bindtap='deleteGoods'>删除</view>
+        </view>
+    </view>
+</view>

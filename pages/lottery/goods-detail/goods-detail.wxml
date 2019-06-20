@@ -1,0 +1,96 @@
+<view class="goods {{isShowServicePop || isShowAddress?'container-detail':''}}">
+    <view class="goods-banner">
+        <swiper class="banner" indicator-dots="true" autoplay="true" indicator-active-color="#fff" interval="3000" duration="1000">
+            <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}" class="index-swiper-item">
+                <image src="{{item.img_url}}" background-size="cover"></image>
+            </swiper-item>
+        </swiper>
+        <view class="group-info" wx:if="{{joinGroup==false && groupInfo.length>0}}" data-id="{{groupInfo[0].orderId}}" bindtap='goJoin'>
+            <image src="{{groupInfo[0].userInfo.userPicture}}"></image>
+            <view class="group-info-right">
+                <view class="group-info-right-name">{{groupInfo[0].userInfo.userName}}</view>
+                <view class="group-person">在拼该商品仅差{{groupInfo[0].personNumber}}人</view>
+            </view>
+        </view>
+        <view class="lottery-info"> 
+            <view class="lottery-info-left">
+                <view>¥0.00</view>
+                <view class="lottery-info-left-price">原价<text class="text-decoration">¥{{goodsInfo.market_price}}</text></view>
+            </view>
+            <view class="lottery-info-right">
+                <image src="../../../static/images/kaijiang.png"></image>
+                <text>{{lotteryInfo.endTime}}开奖</text>
+            </view>
+        </view>
+    </view>
+    <view class="goods-name">{{goodsInfo.name}}</view>
+    <view class="goods-service" bindtap='showServicePop'>
+        <view class="goods-service-tit">
+            <text class="goods-service-tit-text">服务：</text>
+            <view class="goods-ser-item">
+                <view class="goods-service-item" wx:for="{{serBeforeList}}" wx:key="{{item.id}}">
+                    <image src="{{item.picture}}"></image>
+                    <text>{{item.title}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="goods-service-right">
+            <image src="../../../static/images/more.png"></image>
+        </view>
+    </view>
+    <view class="{{ isShowServicePop ? 'zan-dialog-show' : '' }}">
+        <view class="popup" wx:if="{{isShowServicePop}}" bindtap="clickModel">
+        </view>
+        <view class="popup-wraper service-popup-wraper">
+                <view class="serv-pop-item" wx:for="{{serviceList}}" wx:key="{{item.id}}">
+                <image class="serv-pop-item-icon" src="{{item.picture}}"></image>
+                <view class="serv-pop-item-right">
+                    <view class="serv-pop-item-right-title">{{item.title}}</view>
+                    <view class="serv-pop-item-right-content">{{item.content}}</view>
+                </view>
+            </view>
+            <view class="view-done" bindtap="clickModel">完成</view>
+        </view>
+    </view>
+    <view class="{{ isShowAddress ? 'zan-dialog-show' : '' }}">
+        <view class="popup" wx:if="{{isShowAddress}}" bindtap="clickMode">
+        </view>
+        <view class="popup-wraper-2">
+            <view class="address-title">
+                <view class="title-left" bindtap="clickMode">取消</view>
+                <view class="title-center">选择一个收货地址</view>
+                <view class="title-right" bindtap='goAddAddress'>+ 新增</view>
+            </view>
+            <view class="address-content" wx:if="{{addressList.length>0}}">
+                <view class="address-item" wx:for="{{addressList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='checkAddress'>
+                    <view class="address-item-left">
+                        <view class="address-item-left-top">
+                            <text>{{item.userName}}</text>
+                            <text class="mar-left-30">{{item.telNumber}}</text>
+                            <text class="moren" wx:if="{{item.is_default==1}}">默认</text>
+                        </view>
+                        <view class="address-detail">{{item.full_region}}{{item.detailInfo}}</view>
+                    </view>
+                    <view class="address-item-right" wx:if="{{item.checkd==false}}">
+                        <image src="../../../static/images/address-down.png"></image>
+                    </view>
+                    <view class="address-item-right" wx:else>
+                        <image src="../../../static/images/address-selected.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="address-content center" wx:else>
+                <image src="../../../static/images/add-address-tishi.png" class="add-address-tishi"></image>
+                <view class="tishi-1">请新增一个收货地址</view>
+                <view class="tishi-2">便于您中奖的时候我们发货给您</view>
+            </view>
+        </view>
+    </view>
+    <view class="goods-about-detail">
+        <view class="view-detail">商品详情</view>
+        <import src="../../../lib/wxParse/wxParse.wxml" />
+        <template is="wxParse" data="{{wxParseData:goodsDetails.nodes}}"/>
+    </view>
+    <view class="join-lottery" wx:if="{{joinGroup==false}}" bindtap='chooseAddress'>0元发起抽奖</view>
+    <view class="join-lottery" wx:else bindtap='goLottery'>查看详情</view>
+</view>

@@ -1,0 +1,35 @@
+<view class="my-team">
+    <view class="my-team-userInfo">
+        <image src="{{pic}}"></image>
+        <view>{{name}}</view>
+    </view>
+    <view class="team-total">
+        <view class="team-total-left">
+            <view>{{teamList.length}}人</view>
+            <view class="team-total-text">我的团队</view>
+        </view>
+         <view class="team-total-right">
+            <view>￥{{money}}</view>
+            <view class="team-total-text">达成收益</view>
+         </view>
+    </view>
+    <view class="team-people">
+        <view class="team-people-title">- 分享成果 -</view>
+        <view class="team-people-box team-people-box-1" wx:if="{{teamList.length===0}}">
+             <view class="container-kong">
+                <image src="http://img.tracenet.cn/bg18.png"></image>
+            </view>
+            <view class='coupon-none'>您还没有自己的团队</view>
+            <button open-type='share' hover-class="none" class='guangguang'>赶紧分享</button>
+        </view>
+        <view class="team-people-box" wx:else>
+            <scroll-view scroll-y="true" class="team-people-content">
+                 <view class="team-people-item" wx:for="{{teamList}}" wx:key="{{item.userId}}">
+                    <image src="{{item.avatar}}"></image>
+                    <view class="team-people-item-name">{{item.nickname}}</view>
+                    <view class="team-people-item-time">{{item.createDate}}</view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

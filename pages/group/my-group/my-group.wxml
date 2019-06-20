@@ -1,0 +1,162 @@
+<view class="group {{ruleShow || showGetCoupon || inviteModel?'container-detail':''}}" >
+    <view class="group-top">
+        <view class="group-code">
+            <view class="group-code-left">
+                <view>邀请码:{{invite}}</view>
+                <view class="copy" bindtap='copy'>复制</view>
+            </view>
+            <view class="group-code-right" bindtap='goRights'>
+                <image src="../../../static/images/group-rights.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="fans-content">
+        <view class="my-fans">
+            <view class="my-fans-left">
+                <text>我的团员</text>
+                <text class="bind-person">({{person}}人/已绑定{{totalFans}}人)</text>
+            </view>
+            <view class="my-fans-right" bindtap='goFans'>
+                <view class="fans-pic" wx:if="{{totalFans==0}}">
+                    <image class="fans-pic-1" src="../../../static/images/moren-group-perpon.png"></image>
+                </view>
+                <view class="fans-pic" wx:elif="{{totalFans==1}}">
+                    <image class="fans-pic-1" src="{{fansInfo[0].avatar}}"></image>
+                </view>
+                <view class="fans-pic" wx:elif="{{totalFans==2}}">
+                    <image class="fans-pic-2" src="{{fansInfo[0].avatar}}"></image>
+                    <image class="fans-pic-3" src="{{fansInfo[1].avatar}}"></image>
+                </view>
+                <view class="fans-pic" wx:else>
+                    <image class="fans-pic-4" src="{{fansInfo[0].avatar}}"></image>
+                    <image class="fans-pic-2" src="{{fansInfo[1].avatar}}"></image>
+                    <image class="fans-pic-3" src="{{fansInfo[2].avatar}}"></image>
+                </view>
+                <image class="more-fans" src="../../../static/images/more.png"></image>
+            </view>
+        </view>
+        <view class="progress-level">
+            <view class="progress-level-tit">
+                <text>lv{{level}}</text>
+                <text>lv{{level+1}}</text>
+            </view>
+            <progress class="group-progress" backgroundColor="#ECB06B" percent="{{percent}}" activeColor="#D81D1A" border-radius="6rpx"/>
+            <view class="fans-number">
+                <view class="fans-number-left">{{totalFans}}人</view>
+                <view class="fans-number-right">{{person}}人</view>
+            </view>
+        </view>
+        
+        <view class="share-content">
+            <view class="share-content-left" wx:if="{{level==1}}">
+                <view class="font-w">邀请5位好友下单送30天会员权益</view>
+                <view class="share-content-des">享好友每笔订单返利最高70%,自购返利翻倍</view>
+            </view>
+            <view class="share-content-left" wx:else>
+                <view>再邀请{{invitePerson}}位好友下单返利立增{{cashBack}}</view>
+                <view class="share-content-des" wx:if="{{vip==false}}">您当前不是会员，去充值吧！</view>
+                <view class="share-content-des" wx:if="{{vip==true}}">会员将于{{endTime}}到期</view>
+            </view>
+            <view class="share-content-right">
+                <button class="share-btn"  hover-class="none" bindtap='showShareModel'>
+                    <image src="../../../static/images/group-share-btn.png"></image>
+                </button>
+            </view>
+        </view>
+    </view>
+    <view class="group-descriptor">
+        <image src="http://img.tracenet.cn/bg45.png" wx:if="{{bindFans==false}}" bindtap='showModel'></image>
+        <image src="http://img.tracenet.cn/bg46.png" wx:if="{{bindFans==true}}"></image>
+    </view>
+    <view class="group-book" bindtap='goBook'>
+        <image src="../../../static/images/xxxx.png"></image>
+    </view>
+    <view class="rechage" catchtap='goCharge' wx:if="{{vip===false}}">
+        <image src="../../../static/images/group-rechage.png"></image>
+    </view>
+        <!-- 热卖商品 -->
+    <view class="hot-goods">
+        <view class="hot-goods-title">
+            <view class="hot-goods-title-left">
+                <image src="../../../static/images/new-gift.png"></image>
+                <text>新晋团员专享</text>
+            </view>
+            <view class="hot-goods-title-right">
+                <image src="../../../static/images/group-goods-tit.png"></image>
+            </view>
+        </view>
+        <view class="hot-goods-content">
+            <view class="hot-goods-content-item" wx:for="{{hotGoods}}" wx:for-index="index" 
+            wx:for-item="item" wx:key="{{item.id}}">
+                <navigator url="../../goods/goods?id={{item.id}}" class="hot-goods-content-item-url">
+                    <image src="{{item.list_pic_url}}"></image>
+                    <view class="hot-goods-content-item-info">
+                         <view class="hot-goods-content-item-name">{{item.name}}</view>
+                         <view class="vip-back">
+                            <text class="vip-back-left">返利:￥{{item.rebate_price}}</text>
+                            <text class="vip-back-right">+ ￥{{item.sub_rebate_price}}(会员)</text>
+                         </view>
+                         <view class="sale-num">
+                            <view class="sale-num-left">￥{{item.retail_price}}</view>
+                            <view class="sale-num-right">已售:{{item.sell_volume}}</view>
+                         </view>
+                    </view>
+                   
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="rule-mode {{ruleShow===false?'hidden':''}}" bindtap='closeRule'>
+    <view class="rule-wraper">
+        <view class="rules-content" catchtap="noThing">
+            <view class="rules-content-title">输入邀请码</view>
+            <view class="write-code">
+                <input class="my-input" maxlength="6" focus="{{isFocus}}"  bindinput='bindcode' value="{{invitecode}}"/>
+            </view>
+            <view class="write-sure" bindtap='writeDone'>
+                <image src="../../../static/images/write-done.png"></image>
+            </view>
+        </view>
+        <view class="close-btn">
+            <image src="../../../static/images/close.png"></image>
+        </view>
+    </view>
+</view>
+<!-- 绑定了上级并且还没有领取优惠券 -->
+<view class="rule-mode {{showGetCoupon===false?'hidden':''}}" bindtap='closeGet'>
+    <view class="rule-wraper">
+        <view class="rules-content" catchtap="noThing">
+            <view class="coupon-content-title">￥{{money}}.00</view>
+            <view class="coupon-get-tishi">“新人好礼推荐”区专用</view>
+            <view class="coupon-get-time">{{coupon.use_start_date}}-{{coupon.use_end_date}}有效</view>
+            <view class="get-btn" bindtap='reciveCoupon'>
+                <image src="../../../static/images/group-get-button.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="invite-mode {{inviteModel===false?'hidden':''}}" bindtap='closeInvite'>
+    <view class="invite-wraper" catchtap='doNo'>
+        <view class="invite-wraper-top">
+            <image src="http://img.tracenet.cn/bg36.png"></image>
+        </view>
+        <view class="invite-bottom">
+            <view class="invite-bottom-share">
+                <button class="invite-share-btn" open-type='share'>
+                    <image src="../../../static/images/invite-share.png" class="invite-bottom-share-image"></image>
+                </button>
+                
+                <text class="margin-top-10">微信好友</text>
+            </view>
+            <view class="invite-bottom-save">
+                <image src="../../../static/images/invite-save.png" bindtap='saveImg' class="invite-bottom-share-image"></image>
+                <text class="margin-top-10">保存图片</text>
+            </view>
+        </view>
+        <view class="invite-close-pic" bindtap='closeInvite'>
+            <image src="../../../static/images/invite-close-pic.png"></image>
+        </view>
+    </view>
+</view>

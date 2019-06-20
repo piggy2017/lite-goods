@@ -1,0 +1,223 @@
+
+.result{
+    width: 100%;
+    position: relative;
+}
+page{
+    width: 100%;
+    min-height: 100%;
+    font-family: PingFangSC-Regular;
+}
+.view-rule{
+    width: 90rpx;
+    height: 48rpx;
+    text-align:center ;   
+    line-height: 48rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    letter-spacing: 1rpx;
+    background: #D51E1E;
+    position: absolute;
+    border-top-right-radius: 24rpx;
+    border-bottom-right-radius: 24rpx;
+    z-index: 9;
+    left: 0;
+    top: 40rpx;
+}
+
+
+
+
+.result-title{
+    width: 648rpx;
+    height: 114rpx;
+    /* margin: 0 auto 0 auto;
+    padding-top: 110rpx; */
+    position: absolute;
+    z-index: 9;
+    left: 50rpx;
+    top: 110rpx;
+}
+.result-title image{
+    width: 100%;
+    height: 100%;
+}
+
+
+.person-info{
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: PingFangSC-Semibold;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    width: 490rpx;
+    height: 130rpx;
+    left: 130rpx;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 9;
+    top: 270rpx;
+}
+.person-info-left,.person-info-right{
+    width: 130rpx;
+    height: 100rpx;
+}
+.zhongjiang-people{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    border: 8rpx solid rgba(255,255,255,0.83);
+}
+.person-name{
+    width: 100%;
+    text-align: center;
+    font-family: PingFangSC-Semibold;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    position: absolute;
+    z-index: 9;
+    bottom: 20rpx;
+}
+.goods-info{
+    position: absolute;
+    z-index: 9;
+    width: 552rpx;
+    height: 132rpx;
+    /* border: 1rpx solid #ddd; */
+    left: 99rpx;
+    top: 50rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.goods-info image{
+    width: 132rpx;
+    height: 132rpx;
+}
+.goods-info-right{
+    width: 398rpx;
+}
+.goods-name{
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #333333;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden;
+}
+.goods-price{
+    font-family: PingFangSC-Semibold;
+    font-size: 32rpx;
+    color: #D53333;
+}
+.yuanjia{
+    font-size: 24rpx;
+    color: #999999;
+    text-decoration: line-through;
+    margin-left: 12rpx;
+}
+
+.hidden{
+    display: none !important;
+}
+.rule-mode{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 99;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.rule-wraper{
+    width: 600rpx;
+    height: 630rpx;
+    background: #FFFFFF;
+    border-radius: 6px;
+    position: relative;
+}
+.rules-content{
+    width: 600rpx;
+    height: 630rpx;
+    background: #FFFFFF;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 101;
+}
+.rules-content-title{
+    font-family: PingFangSC-Semibold;
+    font-size: 32rpx;
+    color: #333333;
+    padding: 24rpx 0;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1rpx solid #ddd;
+}
+.rules-content-bottom{
+    padding: 29rpx 36rpx 0 36rpx;
+}
+.rule-list{
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #666666;
+}
+.rule-list:not(:first-child){
+    margin-top: 20rpx;
+}
+.i-know{
+    background: #D53333;
+    box-shadow: 0 10rpx 18rpx 0 rgba(156,7,7,0.29);
+    border-radius: 51rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    width: 400rpx;
+    height: 72rpx;
+    text-align: center;
+    line-height: 72rpx;
+    margin-top: 50rpx;
+    margin-left: 64rpx;
+}
+
+.top .top-bg{
+    width: 100%;
+    display: block;
+}
+.middle,.bottom,.top{
+    width: 100%;
+    position: relative;
+}
+.middle .middel-bg{
+    width: 100%;
+    display: block;
+    height: 363rpx;
+    object-fit: scale-down;
+}
+.bottom .bottom-bg{
+    width: 100%;
+    display: block;
+}
+.go-group{
+    position: absolute;
+    z-index: 9;
+    width: 608rpx;
+    height: 92rpx;
+    line-height: 92rpx;
+    text-align: center;
+    top: 30rpx;
+    background: #D53333;
+    left: 71rpx;
+    font-family: PingFangSC-Medium;
+    border-radius: 46rpx;
+    font-size: 132rx;
+    color: #FFFFFF;
+    box-shadow: 0 10rpx 18rpx 0 rgba(156,7,7,0.29);
+}

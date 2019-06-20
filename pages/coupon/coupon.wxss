@@ -1,0 +1,53 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.coupon-item{
+    width: 710rpx;
+    margin: 30rpx auto 0 auto;
+    height: 200rpx;
+    background-image: url("data:image/png;base64,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");
+    box-shadow: 0 4rpx 6rpx 0 rgba(0,0,0,0.09);
+    border-radius: 8rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.coupon-item-top{
+    padding: 60rpx 30rpx 20rpx 30rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.price{
+    opacity: 0.72;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #D53333;
+}
+.use-btn{
+    width: 152rpx;
+    height: 54rpx;
+    line-height: 54rpx;
+    text-align: center;
+    color: #fff;
+    background: #D53333;
+    border-radius: 4rpx;
+    font-size: 28rpx;
+}
+.coupon-time{
+    font-size: 26rpx;
+    color: #AAAAAA;
+    padding-left: 30rpx;
+}
+.guoqi{
+    opacity: 0.72;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #AAAAAA;
+}
+.guoqi-right{
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #BBBBBB;
+}

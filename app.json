@@ -1,0 +1,108 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/cart/cart",
+        "pages/tree/tree",
+        "pages/center/center",
+        "pages/goods/goods",
+        "pages/auth/auth",
+        "pages/address/address",
+        "pages/question/question",
+        "pages/vip/rights/rights",
+        "pages/vip/vipInfo/vipInfo",
+        "pages/vip/withdrawal/withdrawal",
+        "pages/vip/earnings/earnings",
+        "pages/vip/team/team",
+        "pages/vip/topUpLogs/topUpLogs",
+        "pages/addAddress/addAddress",
+        "pages/order/myorder/myorder",
+        "pages/order/order-detail/order-detail",
+        "pages/order/express/express",
+        "pages/order/comment/comment",
+        "pages/order/refund/refund",
+        "pages/order/shipping/shipping",
+        "pages/order/after-sales/after-sales",
+        "pages/order/refund-detail/refund-detail",
+        "pages/order/refund-money-detail/refund-money-detail",
+        "pages/coupon/coupon",
+        "pages/makeOrder/makeOrder",
+        "pages/payResult/payResult",
+        "pages/lottery/lotteryorder/lotteryorder",
+        "pages/lottery/lottery-list/lottery-list",
+        "pages/lottery/goods-detail/goods-detail",
+        "pages/lottery/submitorder/submitorder",
+        "pages/lottery/detail/detail",
+        "pages/lottery/results/results",
+        "pages/wish/wish-list/wish-list",
+        "pages/wish/my-wish/my-wish",
+        "pages/wish/detail/detail",
+        "pages/postage/list/list",
+        "pages/gold/list/list",
+        "pages/gold/record/record",
+        "pages/vip/recharge/recharge",
+        "pages/activity-goods/activity-goods",
+        "pages/classify/classify",
+        "pages/center-coupon/center-coupon",
+        "pages/search/search",
+        "pages/tree-share/tree-share",
+        "pages/tree-friend/tree-friend",
+        "pages/group/my-group/my-group",
+        "pages/group/fans/fans",
+        "pages/subject/subject",
+        "pages/kitchen/kitchen",
+        "pages/group/instructions/instructions"
+    ],
+    "requiredBackgroundModes": [
+        "audio"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "有点东西",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "selectedColor": "#D53333",
+        "color": "#4d4d4d",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "static/images/home-nomal.png",
+                "selectedIconPath": "static/images/home-selected.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/tree/tree",
+                "iconPath": "static/images/tree-nomal.png",
+                "selectedIconPath": "static/images/tree-selected.png",
+                "text": "摇钱树"
+            },
+            {
+                "pagePath": "pages/group/my-group/my-group",
+                "iconPath": "static/images/team-nomal.png",
+                "selectedIconPath": "static/images/team-selected.png",
+                "text": "团长"
+            },
+            {
+                "pagePath": "pages/cart/cart",
+                "iconPath": "static/images/cart-nomal.png",
+                "selectedIconPath": "static/images/cart-selected.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/center/center",
+                "iconPath": "static/images/center-nomal.png",
+                "selectedIconPath": "static/images/center-selected.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 60000,
+        "downloadFile": 60000
+    }
+}

@@ -1,0 +1,207 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-color: #f2f2f2;
+    font-family: PingFangSC-Medium;
+}
+.container{
+     min-height: 100%;
+}
+.container-kong{
+    margin: 320rpx auto 0 auto;
+    width: 276rpx;
+    height: 240rpx;
+}
+.container-kong image{
+    width: 276rpx;
+    height: 240rpx;
+}
+.coupon-none{
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #f08d7e;
+}
+.guangguang{
+    margin: 60rpx auto 0 auto;
+    width: 304rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 40rpx;
+    border: 1rpx solid #e6e6e6;
+    color:#aaa;
+    font-size: 28rpx;
+}
+.item{
+    width: 710rpx;
+    height: 196rpx;
+    margin: 20rpx 20rpx 0 20rpx;
+    background-color: #fff;
+    padding: 20rpx 0;
+    position: relative;
+}
+.item-url{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.item-left{
+    width: 196rpx;
+    height: 198rpx;
+    border-radius: 8rpx;
+    margin-left: 18rpx;
+}
+.item-left image{
+    width: 196rpx;
+    height: 198rpx;
+    border-radius: 8rpx;
+}
+.item-right{
+    width: 448rpx;
+    margin-left: 20rpx;
+    margin-right: 24rpx;
+}
+.item-right-top{
+    font-size: 28rpx;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: #333333;
+}
+.item-name{
+    width: 346rpx;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical !important;
+    font-weight:bold;
+    overflow:hidden;
+}
+.view-more{
+    font-weight:bold;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #D53333;
+}
+.item-right-center{
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #999999;
+    margin-top: 16rpx;
+}
+.item-time{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.time-item{
+    height: 42rpx;
+    width: 44rpx;
+    text-align: center;
+    line-height: 42rpx;
+    font-family: PingFangSC-Semibold;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    background: #000000;
+    border-radius: 4px;
+}
+.maohao{
+    color: #000;
+    font-weight: bold;
+}
+.time-end-tishi{
+    font-size: 28rpx;
+    color: #999999;
+    margin-left: 10rpx;
+}
+.item-bottom{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 34rpx;
+    justify-content: space-between;
+}
+.pro-bottom{
+    position: relative;
+}
+.goumai-btn-share{
+    width: 144rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    background: #D53333;
+    padding: 0;
+    border-radius: 30rpx;
+    position: absolute;
+    z-index: 9;
+    right: 26rpx;
+    bottom: 36rpx;
+}
+.absolut-price{
+    position: absolute;
+    z-index: 9;
+    left: 50rpx;
+    top: 5rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 20rpx;
+    color: #D53333;
+}
+.item-bottom progress{
+    width: 240rpx;
+    border: 1rpx solid #D53333;
+    border-radius: 18rpx;
+    height:34rpx;
+}
+.item-bottom-price{
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    color: #D53333;
+    font-weight: bold;
+}
+.item-bottom-price text{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #666666;
+    margin-left: 10rpx;
+    text-decoration: line-through;
+    font-weight: normal;
+}
+.goumai-btn{
+    width: 144rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    background: #D53333;
+    border-radius: 30rpx;
+}
+
+.detail-btn{
+    width: 144rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 27rpx;
+    color: #FFFFFF;
+    background: #D53333;
+    border-radius: 30rpx;
+    margin-top: 30px
+}
+
+
+.goumai-btn-2{
+     width: 144rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #FFFFFF;
+    background: #DDDDDD;
+    border-radius: 30rpx;
+}

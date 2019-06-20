@@ -1,0 +1,35 @@
+<wxs src="../../../wxs/subutil.wxs" module="tools" />
+<view class="container">
+    <view class="my-shouyi-top">
+        <view class="yu-e">红包剩余金额</view>
+        <view class="my-shouyi-top-edit">
+            <view class="my-shouyi-top-edit-yuan">￥
+                <text>{{money}}</text>
+            </view>
+            <view class="goTIxian" bindtap='withdraw'>申请提现</view>
+        </view>
+    </view>
+
+    <view class="shouyi-logs">
+        <view class="shouyi-logs-top">
+            <text>时间</text>
+            <text>类型</text>
+            <text>金额</text>
+        </view>
+        <view class="wraper" wx:if="{{eraningList.length===0}}">
+            <view class="container-kong">
+                <image src="http://img.tracenet.cn/bg16.png"></image>
+            </view>
+            <view class='coupon-none'>您当前没有收益呢</view>
+        </view>
+        <view class="wraper" wx:else>
+            <view class="shouyi-logs-item {{item.type===0?'':'shouyi-logs-item-2'}}" wx:for="{{eraningList}}" wx:key="{{item.id}}">
+                <view class="dateWith">{{tools.sub(item.createDate,0,16)}}</view>
+                <view class="haswidth">{{item.consumptionName}}</view>
+                <view class="text-red money" wx:if="{{item.type===0}}">+{{item.amount}}</view>
+                <view class="text-red money" wx:if="{{item.type===1}}">-{{item.amount}}</view>
+            </view>
+        </view>
+
+    </view>
+</view>

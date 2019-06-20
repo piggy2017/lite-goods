@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="vip-item " wx:for="{{recharges}}" wx:for-index="index" wx:key="{{item.id}}" >
+    <view class="vip-item-top">
+      <view>{{item.name}}</view>
+      <view class="text-red">¥{{item.price}}</view>
+    </view>
+    <view class="vip-item-time">
+      <text class="color-ddd">{{item.days}}天有效</text>
+    </view>
+    <view class="vip-item-time-2">
+      <text class="color-ddd" wx:if="{{item.cash!=0}}">{{item.cash}}元返现</text>
+      <text class="color-ddd" wx:if="{{item.couponMoney!=null}}"> +{{item.couponMoney}}元无门槛优惠劵</text>
+    </view>
+     <view class="vip-item-right">
+       <text class='vip-buy' data-orderId="{{item.id}}" bindtap='goBuy'>立刻购买</text>
+     </view>
+  </view>
+</view>

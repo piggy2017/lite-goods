@@ -1,0 +1,25 @@
+<view class="wraper">
+    <view class="record-top">
+        <image src="../../../static/images/gold-xi.png"></image>
+        <view class="my-gold">我的金币</view>
+        <view class="gold-top-num">
+            <view class="">{{goldCount}}</view>
+            <view class="gobuy" bindtap='goGold'>去使用</view>
+        </view>
+    </view>
+    <view class="shouyi-logs">
+        <view class="shouyi-logs-top">
+            <text>时间</text>
+            <text class="leix">类型</text>
+            <text>金额</text>
+        </view>
+        <view class="recrd-content">
+            <view class="shouyi-logs-item {{item.type=='1'?'':'shouyi-logs-item-2'}}" wx:for="{{recordList}}" wx:key="{{item.id}}">
+                <view class="dateWith">{{item.createDate}}</view>
+                <view class="haswidth">{{item.from}}</view>
+                <view class=" money text-red" wx:if="{{item.type=='1'}}">+{{item.goldCount}}</view>
+                <view class=" money" wx:else>-{{item.goldCount}}</view>
+            </view>
+        </view>
+    </view>
+</view>

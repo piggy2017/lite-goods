@@ -1,0 +1,153 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: PingFangSC-Regular;
+    background-position: center center;
+    background-image: url("http://img.tracenet.cn/bg9.jpg");
+}
+.info{
+    width: 700rpx;
+    height: 636rpx;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16rpx 16rpx 0px 0px;
+    margin: 96rpx auto 4rpx auto;
+    position: relative;
+    border-top-left-radius:12rpx;
+    border-top-right-radius: 12rpx;
+}
+.user-name{
+   width: 100%;
+   text-align: center;
+    font-size: 30rpx;
+    color: #666666;
+    padding-top: 64rpx;
+}
+.user-pic{
+    width: 104rpx;
+    height: 104rpx;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 9;
+    border: 4rpx solid #fff;
+    top: -52rpx;
+    left: 297rpx;
+}
+.user-pic image{
+    width: 104rpx;
+    height: 104rpx;
+    border-radius: 50%;
+}
+.shuzhi{
+    height: 250rpx;
+    width: 388rpx;
+    margin: 100rpx auto 24rpx auto;
+}
+.shuzhi image{
+    height: 250rpx;
+    width: 388rpx; 
+}
+.share-btn{
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    margin: 0 auto;
+    background-image: linear-gradient(-90deg, #0FA342 8%, #0AC57E 51%, #0FA342 93%);
+    box-shadow: 0 10rpx 18rpx 0 rgba(11,125,88,0.38);
+    height: 84rpx;
+    width: 514rpx;
+    border-radius: 42rpx;
+}
+.text-green{
+    font-size: 24rpx;
+    color: #1DA286;
+    text-align: center;
+    margin-top: 20rpx;
+}
+.friends{
+    width: 700rpx;
+    min-height: 410rpx;
+    max-height: 580rpx;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom-left-radius: 12rpx;
+    border-bottom-right-radius: 12rpx;
+    margin: 0 auto 0 auto;
+}
+.friends-title{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 30rpx;
+    color: #333333;
+}
+.friends-title-item{
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+.friends-title-item-left::after{
+    content: "";
+    position: absolute;
+    right: 2rpx;
+    top: 20rpx;
+    height: 40rpx;
+    width: 1rpx;
+    background-color: #ddd;
+    z-index: 9;
+}
+.friends-content{
+    min-height: 330rpx;
+    max-height: 500rpx;
+    overflow: auto;
+}
+.no-image{
+    width: 168rpx;
+    height: 124rpx;
+    margin: 60rpx auto 20rpx auto;
+}
+.no-image image{
+    width: 168rpx;
+    height: 124rpx;
+}
+.item-left-name{
+    width: 360rpx;
+    display: inline-block;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden;
+}
+.text-buttom{
+    font-size: 28rpx;
+    color: #A2B796;
+    text-align: center;
+}
+.item{
+    padding: 16rpx 40rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30rpx;
+    color: #333333;
+}
+.item-left{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 40rpx;
+    align-items: center;
+}
+.item-left image{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    margin-right: 16rpx;
+}
+.item-right{
+    color: #666666;
+    margin-right: 40rpx;
+}

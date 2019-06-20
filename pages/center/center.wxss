@@ -1,0 +1,333 @@
+.center-top{
+    width: 100%;
+    height: 268rpx;
+    position: relative;
+    border-bottom-left-radius:16rpx;
+    border-bottom-right-radius:16rpx;
+}
+.center-top .bg-center{
+    width: 100%;
+    height: 268rpx;
+     border-bottom-left-radius:16rpx;
+    border-bottom-right-radius:16rpx;
+}
+.user-info{
+    font-family: PingFangSC-Semibold;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 670rpx;
+    height: 116rpx;
+    align-items: center;
+    position: absolute;
+    z-index: 99;
+    top: 40rpx;
+    left: 40rpx;
+}
+.user-pic{
+    /* border-radius: 50%; */
+    /* border: 6rpx solid #fff; */
+    /* width: 116rpx;
+    height: 116rpx; */
+}
+.user-pic image{
+     border: 6rpx solid #fff;
+    height: 108rpx;
+    width: 108rpx;
+    border-radius: 50%;
+}
+.user-info-detail{
+    margin-left: 20rpx;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: space-around;
+    width: 360rpx;
+}
+.nomal-vip{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #4A0000;
+    background-image: linear-gradient(-141deg, #F77443 0%, #FFDFBC 100%);
+    box-shadow: 0 4px 8px 0 #AF0808;
+    width: 128rpx;
+    height: 40rpx;
+    border-radius: 22rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.user-info-yue{
+    width: 168rpx;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.user-info-yue-text{
+    opacity: 0.8;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #FFFFFF;
+}
+.maiduo-vip-pic{
+    width: 674rpx;
+    height: 74rpx;
+    position: absolute;
+    left: 40rpx;
+    bottom: 0;
+    z-index: 99;
+}
+.maiduo-vip-pic image{
+    width: 100%;
+    height: 100%;
+}
+.order-reduce-money{
+    position: absolute;
+    right: 180rpx;
+    bottom: 20rpx;
+    z-index: 100;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #333333;
+    font-weight: bold;
+}
+
+.center{
+    background-color: #f2f2f2;
+}
+.hr{
+    width: 100%;
+    height: 22rpx;
+}
+/* 我的订单 */
+.my-order{
+    width: 100%;
+    background-color: #fff;
+  
+}
+.my-order-title{
+    width: 100%;
+    height: 80rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #000000;
+    border-bottom: 1rpx solid #eee;
+}
+.my-order-title-url{
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+.my-order-title view{
+    margin-left: 40rpx;
+}
+.my-order-title image{
+    width: 12rpx;
+    height: 24rpx;
+    margin-right: 40rpx;
+}
+.my-order-style{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 182rpx;
+
+}
+.my-order-style-item{
+    width: 25%;
+    height: 100%;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #666666;
+    box-sizing: border-box;
+     font-weight: bold;
+}
+.my-order-style-item-item{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.my-order-style-item:not(:last-child){
+    border-right: 1rpx solid #eee;
+}
+.image-wraper{
+    width: 56rpx;
+    height: 56rpx;
+    position: relative;
+}
+
+.order-num{
+    min-width: 32rpx;
+    height: 32rpx;
+    border-radius:16rpx;
+    background: #EC4A4A;
+    position: absolute;
+    border: 1rpx solid #FFFFFF;
+    font-family: PingFangSC-Medium;
+    text-align: center;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    padding: 0 8rpx;
+    z-index: 9;
+    box-sizing: border-box;
+    right: -12rpx;
+    top: -12rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.my-order-style-item image{
+    width: 56rpx;
+    height: 56rpx;
+}
+.my-order-style-item text{
+    margin-top: 14rpx;
+}
+.about{
+    margin-top: 20rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #fff;
+    width: 100%;
+    height: 182rpx;
+}
+.about-item{
+    width: 25%;
+    height: 100%;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #666666;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+.about-item-item{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.about-item:not(:last-child){
+      border-right: 1rpx solid #eee;
+}
+.about-item-item image{
+    width: 46rpx;
+    height: 46rpx;
+}       
+.about-item-item text{
+    margin-top: 14rpx;
+}
+
+page{
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.about-vip{
+    margin-top: 24rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 164rpx;
+}
+.about-vip-item{
+    width: 30%;
+    height: 100%;
+}
+.about-vip-item:first-child{
+    border-right: 1rpx solid #ddd;
+}
+.about-vip-item-nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    color: #999999;
+}
+.about-vip-item-image-left{
+    width: 100rpx;
+    height: 110rpx;
+}
+.about-vip-item-image-right{
+    width: 100rpx;
+    height: 110rpx;
+}
+.about-vip-item-nav-title{
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+    font-size: 30rpx;
+    color: #333333;
+}
+.about-vip-item-image{
+    margin-right: 20rpx;
+}
+
+.go-auth{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-top: 20rpx;
+    text-align: center;
+    color: #ed4864;
+}
+.about-vip-child{
+    width: 50%;
+    height: 184rpx;
+    background-color: #fff;
+    font-family: PingFangSC-Medium;
+    font-size: 24rpx;
+    color: #666666;
+}
+.about-vip-child:first-child{
+    border-right: 1rpx solid #eee;
+}
+.about-vip-child-vip{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.lingyuan-choujiang{
+    width: 110rpx;
+    height: 100rpx;
+}
+.about-vip-t{
+    margin-left: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    color: #999999;
+}
+.center-font{
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #333333;
+}
+.wish-icon-12{
+    width: 106rpx;
+    height: 88rpx;
+}
+/* .about-vip-child-vip image{
+    width: 124rpx;
+    height: 108rpx;
+} */

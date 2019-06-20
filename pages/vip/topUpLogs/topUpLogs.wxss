@@ -1,0 +1,85 @@
+page {
+    min-height:100%;
+    background-color:#f2f2f2;
+}
+.container{
+     min-height: 100%;
+}
+.container-kong{
+    margin: 320rpx auto 0 auto;
+    width: 256rpx;
+    height: 240rpx;
+}
+.coupon-none{
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #f08d7e;
+}
+.container-kong image{
+    width: 256rpx;
+    height: 240rpx;
+}
+.topUp-logs-item{
+    background: #FFFFFF;
+    box-shadow: 0 12rpx 28rpx 0 rgba(0,0,0,0.07);
+    border-radius: 12rpx;
+    width: 690rpx;
+    height: 230rpx;
+    margin-top: 20rpx;
+}
+.topUp-logs-item-title{
+    padding: 20rpx 30rpx 14rpx 30rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 40rpx;
+    color: #000000;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.topUp-logs-item-title-left{
+    font-weight: bold;
+}
+.margin-left-10{
+    margin-left: 10rpx;
+}
+.topUp-logs-item-title-right{
+    font-size: 28rpx;
+    color: #D53333;
+    margin-top: 8rpx;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAM1BMVEUAAADWMzPWMzPWNDTXMzPVMzPWNDTVNDTXNDTYNTXVNjbXNTXcOjrfQEDVNDTWNDTVMzPsFCEgAAAAEHRSTlMA546nc/PPsllIPTIWCHp7NCP0SgAAAJdJREFUKM91UlsOxCAIRMRH1XZ7/9OuQEqaJjMfioDMiFBgdpE+6YPF6TYkXm+/lDtQJNxnttzMnO1ePsmh/nq4fVSNuC3bZArwPorxlvBHpCzfq55HS6kNtapnbj6tf7mmS3m2EqJpK41H7fDcSd1FtCfQXGYniYKO5LQCA7AUJA+5v49c9EDYEtRE1Hb8Ufhr8TDA8fkDBt8Ohjg9gWgAAAAASUVORK5CYII=");
+    background-repeat: no-repeat;
+    background-size: 20rpx 20rpx;
+    background-position: 40rpx center;
+    padding-left: 63rpx;
+    /* width: 200rpx; */
+    /* text-align: right; */
+}
+.text-red{
+    font-size: 36rpx;
+    color: #D53333;
+}
+.withdrawal-item-time{
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #000000;
+    padding: 0 40rpx;
+}
+.withdrawal-item-time-2{
+    margin-top:12rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #000000;
+    padding: 0 40rpx;
+}
+.withdrawal-item-time-end{
+    margin-top:12rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    padding: 0 40rpx;
+}
+.color-ddd{
+    color: #666666;
+    margin-left: 10rpx;
+}

@@ -1,0 +1,34 @@
+<view class="comment-page">
+    <view class="comment-list">
+        <view class="comment-item" wx:for="{{goodsList}}" wx:for-index="index" wx:key="{{item.id}}">
+            <view class="comment-item-title">
+                <view class="comment-item-img">
+                    <view class="comment-item-img-left">
+                        <image src="{{item.productPicture}}"></image>
+                        <text class="comment-item-title-tex">描述相符</text>
+                    </view>
+                    <view class="star-list">
+                        <image wx:for="{{item.goodsStars}}" wx:for-item="childItem" wx:key="{{idxs}}" src="{{childItem.src}}" data-index="{{idxs}}" wx:for-index="idxs" data-id="{{item.id}}" bindtap='checkStar'>
+                        </image>
+                    </view>
+                </view>
+                <view class="comment-item-fen" wx:if="{{item.score>=4}}">非常好</view>
+                <view class="comment-item-fen" wx:elif="{{item.score<3}}">差评</view>
+                <view class="comment-item-fen" wx:else>一般般</view>
+            </view>
+            <view class="comment-item-content">
+                <textarea placeholder="宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧!"  data-id="{{item.id}}" bindinput= "getValue" placeholder-class="pla-class"></textarea>
+                <view class="refund-choose-image">
+                    <view class="choosed-img">
+                        <image wx:for="{{item.picList}}" wx:for-item="imgItem" data-id="{{item.id}}" bindtap='previewImage' data-src="{{imgItem}}" src="{{imgItem}}" wx:for-index="idx" wx:key="idx"></image>
+                    </view>
+                    
+                    <view class="choose-image" data-id="{{item.id}}" bindtap='chooseImg'>
+                        <image src="../../../static/images/upload-img.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="to-submit" bindtap='submitComment'>提交</view>
+</view>

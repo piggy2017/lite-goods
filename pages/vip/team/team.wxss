@@ -1,0 +1,166 @@
+.my-team{
+    width: 100%;
+    /* height: 1000rpx; */
+}
+page {
+    min-height:100%;
+    background-image: url("http://img.tracenet.cn/bg5.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(82, 81, 80);
+}
+.container-kong{
+    margin: 60rpx auto 0 auto;
+    width: 250rpx;
+    height: 240rpx;
+}
+.guangguang{
+    margin: 60rpx auto 0 auto;
+    width: 304rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 40rpx;
+    border: 1rpx solid #eee;
+    color:#aaa;
+    font-size: 28rpx;
+}
+.guangguang::after{
+    border: none
+}
+.team-people-box-1{
+    padding-bottom: 60rpx;
+}
+.container-kong image{
+    width: 250rpx;
+    height: 240rpx;
+}
+.coupon-none{
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #f08d7e;
+}
+
+.share-btn{
+    width: 320rpx;
+    margin-top: 10rpx;
+    background-color:#fff;
+    padding:0 8rpx;
+    /* border:1rpx solid #eee; */
+    border: none !important;
+    
+    display:flex;
+    flex-flow:row nowrap;
+    align-items:center;
+    justify-content: center;
+    color:#aaa;
+    font-size:28rpx;
+    text-align: center;
+    border-radius:0;
+}
+.my-team-userInfo{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #FFFFFF;
+}
+
+.my-team-userInfo view{
+    margin-top: 16rpx;
+}
+.my-team-userInfo image{
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 50%;
+    margin-top: 60rpx;
+}
+.team-total{
+    margin-top: 30rpx;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    font-family: PingFangSC-Medium;
+    font-size: 40rpx;
+    color: #E8D1AC;
+}
+.team-total-left{
+    margin-right: 100rpx;
+    text-align: center;
+    position: relative;
+}
+.team-total-left::after{
+    position: absolute;
+    z-index: 99;
+    right: -100rpx;
+    top: 10rpx;
+    bottom: 10rpx;
+    width: 2rpx;
+    background-color:  #E8D1AC;
+    opacity: 0.5;
+    content: "";
+}
+.team-total-right{
+    margin-left: 100rpx;
+    text-align: center;
+}
+.team-total-text{
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+.team-people{
+    width: 670rpx;
+    background-color: #fff;
+    margin: 30rpx auto 0 auto;
+    border-radius: 16rpx;
+}
+.team-people-title{
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #999999;
+    text-align: center;
+    padding-top: 30rpx;
+}
+.team-people-box{
+    width: 100%;
+}
+.team-people-content{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    height: 550rpx;
+    padding: 0 0 50rpx 0;
+    max-height: 750rpx;
+}
+.team-people-item{
+    width: 33.3%;
+    text-align: center;
+    font-size: 24rpx;
+    color: #999999;
+    margin-top: 40rpx;
+    display: inline-block;
+}
+.team-people-item image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.team-people-item-name{
+    font-size: 28rpx;
+    width: 100%;
+    color: #333333;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    text-align:center;
+    -webkit-line-clamp:1;
+    margin-top: 20rpx;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden;
+}
+.team-people-item-time{
+    margin-top: 4rpx;
+}

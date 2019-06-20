@@ -1,0 +1,118 @@
+<view class="my-order">
+    <view class="order-class">
+        <view class="order-class-item {{active==0?'order-class-active':''}} " data-type="0" bindtap='orderClass'>全部</view>
+        <view class="order-class-item {{active==1?'order-class-active':''}} " data-type="1" bindtap='orderClass'>待分享</view>
+        <view class="order-class-item {{active==2?'order-class-active':''}} " data-type="2" bindtap='orderClass'>已成团</view>
+        <view class="order-class-item {{active==4?'order-class-active':''}} " data-type="4" bindtap='orderClass'>已开奖</view>
+    </view>
+
+    <view class="hr"></view>
+    <view class="order-wraper" wx:if="{{orderList.length===0}}">
+        <view class="container-kong">
+            <image src="http://img.tracenet.cn/bg11.png"></image>
+        </view>
+        <view class='coupon-none'>您还没有相关订单</view>
+        <view class='guangguang' bindtap='guang'>去逛逛吧</view>
+    </view>
+    <view class="order-wraper" wx:else>
+        <view class="my-order-item" wx:for="{{orderList}}" wx:key="{{item.orderId}}">
+            <view class="my-order-item-title">
+                <view class="my-order-item-title-left">
+                    <image src="../../../static/images/time.png"></image>
+                    <text>{{item.orderAddTime}}</text>
+                </view>
+                <view class="my-order-item-title-right title-red" wx:if="{{item.typeStatus==1}}">
+                    待分享
+                </view>
+                <view class="my-order-item-title-right title-red" wx:elif="{{item.typeStatus==2}}">
+                    已成团 待开奖
+                </view>
+                <view class="my-order-item-title-right title-red" wx:elif="{{item.typeStatus==3}}">
+                    拼团失败
+                </view>
+                <view class="my-order-item-title-right title-red" wx:elif="{{item.typeStatus==4}}">
+                    已开奖
+                </view>
+                 <view class="my-order-item-title-right title-red" wx:elif="{{item.typeStatus==5}}">
+                    开奖失败
+                </view>
+            </view>
+            <view class="my-order-item-content">
+                <navigator url="../results/results?orderId={{item.orderId}}" wx:if="{{item.typeStatus==4}}" class="my-order-item-content-url">
+                    <view class="my-order-item-content-left">
+                        <image src="{{item.goodsTitlePicture}}"></image>
+                    </view>
+                    <view class="my-order-item-content-right">
+                        <view class="my-order-goods-left">
+                            <view class="my-order-goods-name">{{item.goodsName}}</view>
+                            <view class="my-order-goods-speci">默认规格</view>
+                        </view>
+                        <view class="my-order-goods-right">
+                            <view class="unit-price">￥{{item.goodsPrice}}</view>
+                            <view class="goods-num">x1</view>
+                        </view>
+                    </view>
+                </navigator>
+                <navigator url="../detail/detail?orderId={{item.orderId}}" wx:else class="my-order-item-content-url">
+                    <view class="my-order-item-content-left">
+                        <image src="{{item.goodsTitlePicture}}"></image>
+                    </view>
+                    <view class="my-order-item-content-right">
+                        <view class="my-order-goods-left">
+                            <view class="my-order-goods-name">{{item.goodsName}}</view>
+                            <view class="my-order-goods-speci">默认规格</view>
+                        </view>
+                        <view class="my-order-goods-right">
+                            <view class="unit-price">￥{{item.goodsPrice}}</view>
+                            <view class="goods-num">x1</view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+
+            <view class="my-order-item-bot">
+                <view class="total-price">
+                    <text class="total-price-left">共<text>1</text>件商品，合计</text>
+                    <text class="total-price-right">¥0</text>
+                </view>
+
+                <view class="my-order-item-btn" wx:if="{{item.typeStatus==1}}">
+                    <button class="share-order order-btn margin-right-20" open-type="share" data-orderId="{{item.orderId}}" data-groupId="{{item.id}}" data-user="{{item.userId}}" bindtap='orderShare'>分享(缺{{item.number}}人)</button>
+                </view>
+
+                <view class="my-order-item-btn" wx:elif="{{item.typeStatus!=1 && item.typeStatus!=4}}">
+                    <view class="detail-order order-btn" data-orderId="{{item.orderId}}" data-status="{{item.typeStatus}}" bindtap='goPay'>订单详情</view>
+                </view>
+                 <view class="my-order-item-btn-2" wx:elif="{{item.typeStatus==5}}">
+                    <view class="fail-result">未达到开奖人数</view>
+                    <view class="detail-order order-btn" data-orderId="{{item.orderId}}" data-status="{{item.typeStatus}}" bindtap='goPay'>订单详情</view>
+                </view>
+
+                <view class="my-order-item-btn" wx:elif="{{item.typeStatus==4 && item.victory==1}}">
+                    <view class="my-order-item-btn-1" wx:if="{{item.shippingStatus==0}}">
+                        <view class="zhongjiang-left">
+                            <image src="../../../static/images/lottery-zhong.png"></image>
+                            <text>恭喜您中奖！</text>
+                        </view>
+                        <view class="zjongjiang-right">
+                            <view class="detail-order order-btn" data-orderId="{{item.orderId}}" data-status="{{item.typeStatus}}" bindtap='goPay'>订单详情</view>
+                            <view class="wait-fahuo order-btn" data-orderId="{{item.orderId}}">待发货</view>
+                        </view>
+                    </view>
+
+                    <view class="my-order-item-btn-1" wx:elif="{{item.shippingStatus==1 || item.shippingStatus==2}}">
+                        <view class="zhongjiang-left">
+                            <image src="../../../static/images/lottery-zhong.png"></image>
+                            <text>恭喜您中奖！</text>
+                        </view>
+                        <view class="zjongjiang-right">
+                            <view class="detail-order order-btn" data-orderId="{{item.orderId}}" data-status="{{item.typeStatus}}" bindtap='goPay'>订单详情</view>
+                            <view class="view-wuliu order-btn" bindtap='viewExpress' data-orderId="{{item.orderId}}">查看物流 </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

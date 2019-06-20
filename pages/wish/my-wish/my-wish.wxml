@@ -1,0 +1,52 @@
+<view class="container" wx:if="{{goodsList.length===0}}">
+    <view class="container-kong">
+        <image src="http://img.tracenet.cn/bg19.png"></image>
+    </view>
+    <view class='coupon-none'>未找到相关订单</view>
+    <view class='guangguang' bindtap='guang'>去逛逛吧</view>
+</view>
+<view class="container" wx:else>
+    <view class="item" wx:for="{{goodsList}}" wx:key="{{item.id}}">
+        <navigator url="../detail/detail?id={{item.id}}" class="item-url">
+            <view class="item-left">
+                <image src="{{item.primaryPicUrl}}"></image>
+            </view>
+            <view class="item-right">
+                <view class="item-right-top">
+                    <view class="item-name">{{item.goodsName}}</view>
+                    <view class="view-more">详情></view>
+                </view>
+                <view class="item-right-center item-time" wx:if="{{item.status==0}}">
+                    <view class="time-item">{{item.hours}}</view>
+                    <view class="maohao">：</view>
+                    <view class="time-item">{{item.mins}}</view>
+                    <view class="maohao">：</view>
+                    <view class="time-item">{{item.secs}}</view>
+                    <view class="time-end-tishi">后结束</view>
+                </view>
+                <view class="item-right-center" wx:elif="{{item.status==1}}">
+                    {{tishi}}
+                </view>
+                <view class="item-right-center" wx:elif="{{item.status==2}}">
+                    {{end}}
+                </view>
+
+                <view class="item-bottom" wx:if="{{item.status==1 || item.status==2}}">
+                    <view class="item-bottom-price">
+                        ￥{{item.nowPrice}}
+                        <text>￥{{item.price}}</text>
+                    </view>
+                    <view class="goumai-btn-2" wx:if="{{item.status==2}}">去购买</view>
+                    <view class="goumai-btn" wx:else>去购买</view>
+                </view>
+                <view class="item-bottom pro-bottom" wx:else>
+                    <progress percent="{{item.percent}}" border-radius="17rpx" stroke-width="34rpx" activeColor="rgba(213,51,51,0.2)" backgroundColor="#fff"/>
+                    <view class="absolut-price">已砍¥{{item.bargainPrice}}</view>
+                     <view class="detail-btn"  catchtap='getOrder' data-id="{{item.orderId}}"  wx:if="{{item.status==3}}">查看订单</view>
+                </view>
+                
+            </view>
+        </navigator>
+         <button class="goumai-btn-share" open-type='share' data-id="{{item.id}}" wx:if="{{item.status==0}}">去分享</button>
+    </view>
+</view>

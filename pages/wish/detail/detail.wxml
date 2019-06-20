@@ -1,0 +1,118 @@
+<view>
+    <view class="rules" bindtap='viewRule'>规则</view>
+    <view class="detail-content">
+        <view class="user-name">{{bargainUserInfo.userName}}</view>
+        <view class="user-pic">
+            <image src="{{bargainUserInfo.userPic}}"></image>
+        </view>
+        <view class="kanjia-status">{{nowStatus}}</view>
+        <view class="goods-info" bindtap='goDetail'>
+            <view class="goods-left">
+                <image src="{{goodsInfo.goodsPic}}"></image>
+                <view class="goods-center">
+                    <view class="goods-name">{{goodsInfo.goodsName}}</view>
+                    <view class="sale-num">{{goodsInfo.sellVolume}}人拿到这个商品</view>
+                </view>
+            </view>
+            <view class="goods-right">
+                <view class="before-price">￥{{goodsInfo.goodsPrice}}</view>
+                <view>原价</view>
+            </view>
+        </view>
+        <view class="hr"></view>
+        <view class="time-content" wx:if="{{status==0}}">
+            <view class="time-text">还剩</view>
+            <view class="time-list">{{hours}}</view>
+            <view class="maohao">:</view>
+            <view class="time-list">{{mins}}</view>
+            <view class="maohao">:</view>
+            <view class="time-list">{{secs}}</view>
+            <view class="time-text">结束</view>
+        </view>
+        <view class="time-content" wx:elif="{{status==1}}">-活动已结束，请于48小时内购买商品-</view>
+        <view class="time-content" wx:elif="{{status==2}}">-活动已失效，未规定时间内下单-</view>
+        <view class="has-reduce">已砍价
+            <text class="red">¥{{bargainTotalPrice}}</text>
+        </view>
+        <view class="pro-content">
+            <progress percent="{{percent}}" border-radius="6rpx" activeColor="#D53333" backgroundColor="#F0F0F0"></progress>
+            <text>￥{{goodsInfo.goodsPrice}}</text>
+        </view>
+        <view wx:if="{{myInfo.userId==bargainUserInfo.userId}}">
+            <view class="btn-content" wx:if="{{status==0}}">
+                <button class="btn btn-mySelf" wx:if="{{join==false}}" bindtap='byMySelf'>自砍一刀</button>
+                <button class="btn btn-mySelf" open-type="share" wx:elif="{{join==true}}">召唤好友助攻</button>
+                <button class="btn btn-goumai" bindtap='goBuy'>爷直接要了</button>
+            </view>
+            <view class="btn-content" wx:elif="{{status==1}}">
+                <view class="liji-buy" bindtap='goBuy'>立即购买</view>
+            </view>
+            <view class="btn-content" wx:elif="{{status==2}}">
+                <view class="liji-buy" bindtap='joinArgen'>再次发起砍价</view>
+            </view>
+
+        </view>
+        <view wx:elif="{{myInfo.userId!=bargainUserInfo.userId}}">
+            <view class="btn-content" wx:if="{{status==0}}">
+                <view class="liji-buy" bindtap='helpReduce'>帮他砍价</view>
+            </view>
+            <view class="btn-content" wx:if="{{status==1}}">
+                <view class="liji-buy" bindtap='joinArgen'>我也要发起砍价</view>
+            </view>
+            <view class="btn-content" wx:if="{{status==2}}">
+                <view class="liji-buy" bindtap='joinArgen'>我也要发起砍价</view>
+            </view>
+            <view class="btn-content" wx:if="{{status==3}}">
+                <view class="liji-buy" bindtap='joinArgen'>我也要发起砍价</view>
+            </view>
+
+        </view>
+    </view>
+    <view class="userlist">
+        <view class="title">
+            <view class="class-border">好友</view>
+            <view>助攻金额</view>
+        </view>
+        <view class="people-list">
+            <view class="user-item" wx:for="{{userList}}" wx:for-index="idx" wx:key="idx">
+                <view class="user-item-left">
+                    <image src="{{item.userPic}}"></image>
+                    <view class="fri-name">{{item.userName}}</view>
+                </view>
+                <view class="user-item-right">￥{{item.userPrice}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- <view class="kefu-content">
+        <view class="kefu-content-left">二维码的图片</view>
+        <view class="kefu-content-right">
+            <image src="../../../static/images/code-reduce.png"></image>
+            <text>二维码</text>
+        </view>
+    </view> -->
+</view>
+<view class="toast-content {{toastShow===false?'hidden':''}}" bindtap='closeModals'>
+    <view class="toast-wraper" catchtap="noThing">
+        <view class="toast-image">
+            <image src="../../../static/images/kanjia-success.png"></image>
+        </view>
+        <view class="toast-text">太给力了！成功砍价</view>
+        <view class="reduce-red">{{reduce}}元</view>
+        <view class="close-model" catchtap='closeModal'>我知道了</view>
+    </view>
+</view>
+<view class="rule-mode {{ruleShow===false?'hidden':''}}" bindtap='closeRule'>
+    <view class="rule-wraper">
+        <view class="rules-content" catchtap="noThing">
+            <view class="rules-content-title">抽奖规则</view>
+            <view class="rules-content-bottom">
+                <view class="rule-list">1.点击“商品”到商品详情发起砍价,转发邀请好友砍价；</view>
+                <view class="rule-list">2.规定时间内邀请好友越多则砍价越多，也可以当商品价格降至接受范围内直接购买；</view>
+                <view class="rule-list">3.砍价商品不限制发起次数；</view>
+                <view class="rule-list">4.商品活动时间结束后在48小时内下单购买，超时商品将恢复至原价；</view>
+                <view class="rule-list">5.如有疑问请联系，请联系客服</view>
+                <view class="i-know" catchtap='closerules'>我知道了</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="tree-share">
+    <view class="info">
+        <view class="user-pic">
+            <image src="{{user.avatar}}"></image>
+        </view>
+        <view class="user-name">{{user.nickname}}</view>
+        <view class="shuzhi">
+            <image src="../../static/images/shuzhi.png"></image>
+        </view>
+        <view class="share-content">
+            <button open-type='share' class="share-btn">邀请好友助力</button>
+        </view>
+        <view class="text-green">(好友最多可为你增加{{shrecount}}次)</view>
+    </view>
+    <view class="friends">
+        <view class="friends-title">
+            <view class="friends-title-item friends-title-item-left">好友</view>
+            <view class="friends-title-item">助力次数</view>
+        </view>
+        <view class="friends-content" wx:if="{{friendsList.length===0}}">
+            <view class="no-image">
+                <image src="../../static/images/not-friend.png"></image>
+            </view>
+            <view class="text-buttom">还没有好友来助力</view>
+        </view>
+        <view class="friends-content" wx:else>
+            <view class="item" wx:for="{{friendsList}}" wx:key="item.userId">
+                <view class="item-left">
+                    <image src="{{item.avatar}}"></image>
+                    <text class="item-left-name">{{item.name}}</text>
+                </view>
+                <view class="item-right">次数+1</view>
+            </view>
+        </view>
+    </view>
+</view> 

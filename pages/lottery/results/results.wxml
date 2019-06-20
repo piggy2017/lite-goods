@@ -1,0 +1,44 @@
+<!-- <view class="result">
+</view> -->
+<view class="top">
+    <image src="../../../static/images/bg-001.jpg" class="top-bg" mode="widthFix"></image>
+    <view class="view-rule" bindtap='viewRule'>规则</view>
+    <view class="result-title">
+        <image src="../../../static/images/zhongjiang-title.png"></image>
+    </view>
+    <view class="person-info">
+        <image class="person-info-left" src="../../../static/images/person-L.png"></image>
+        <image src="{{winner.userPicture}}" class="zhongjiang-people"></image>
+        <image  class="person-info-right" src="../../../static/images/person-R.png"></image>
+    </view>
+    <view class="person-name">{{winner.userName}}</view>
+</view>
+<view class="middle">
+    <image src="../../../static/images/bg-002.jpg" class="middel-bg"></image>
+    <view class="goods-info">
+        <image src="{{goodsInfo.goodsTitlePicture}}"></image>
+        <view class="goods-info-right">
+            <view class="goods-name">{{goodsInfo.goodsName}}</view>
+            <view class="goods-price">￥{{goodsInfo.payPrice}} <text class="yuanjia">￥{{goodsInfo.goodsPrice}}</text></view>
+        </view>
+    </view>
+</view>
+<view class="bottom">
+    <image src="../../../static/images/bg-003.jpg" mode="widthFix" class="bottom-bg"></image>
+    <view class="go-group" bindtap='goGroup'>我也要开团中大奖</view>
+</view>
+<view class="rule-mode {{ruleShow===false?'hidden':''}}" bindtap='closeModals'>
+    <view class="rule-wraper">
+        <view class="rules-content" catchtap="noThing">
+            <view class="rules-content-title">抽奖规则</view>
+            <view class="rules-content-bottom">
+                <view class="rule-list">1.点击“马上抢”到商品详情开团,转发邀请好友参团；</view>
+                <view class="rule-list">2.规定时间内完成拼团可以获取一次抽奖资格,成团次数越多中奖概率越大；</view>
+                <view class="rule-list">3.同一商品不限制开团次数;</view>
+                <view class="rule-list">4.零元抽奖不接受退换货申请；</view>
+                <view class="rule-list">5.如有疑问请联系，请联系客服</view>
+                <view class="i-know" catchtap='closeModal'>我知道了</view>
+            </view>
+        </view>
+    </view>
+</view>

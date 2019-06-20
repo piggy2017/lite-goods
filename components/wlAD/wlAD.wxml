@@ -1,0 +1,43 @@
+<wl-ad>
+  <view wx:if="{{adData[adID].type==='banner'}}" style="height:150rpx;width: 100%">
+    <view wx:if="{{adData[adID].showAd}}" data-id="{{adID}}" data-type="{{adData[adID].type}}" bindtap="clickAd" style="height: 100%;padding: 0 20rpx;display: flex;position:relative;flex-direction: row;align-items: center;">
+      <view style="position: relative; display: flex; width: 100rpx; overflow: hidden;margin-right:30rpx;">
+        <image src="{{adData[adID].logo}}" mode="widthFix" style="width: 100%;border-radius: 50%; margin: 0 auto;"></image>
+      </view>
+      <view style="display: flex;flex-direction: column;padding-right:12rpx;width:64%">
+        <text style="display: flex;flex-direction: column;justify-content: center;font-size: 32rpx;margin:-10rpx 0 10rpx 0">{{adData[adID].name}}</text>
+        <text style="display: flex;flex-direction: column;justify-content: center;font-size: 24rpx;line-height: 34rpx">{{adData[adID].desc}}</text>
+      </view>
+      <button style="width: 120rpx!important;padding: 0rpx 20rpx!important;font-size:26rpx!important;line-height:46rpx !important;" size="mini"  plain="true">打 开</button>
+      <text wx:if="{{adData[adID].showIcon}}" style="position: absolute;bottom: 0rpx;right:0rpx;padding: 3rpx 6rpx;background: rgba(0, 0, 0, .3); font-size: 16rpx; color: #fff;font-weight: bolder; text-align: center; border-bottom-left-radius: 10rpx;border-top-left-radius: 10rpx;">微量联盟</text>
+    </view>
+  </view>
+
+  <view wx:if="{{adData[adID].type==='insert'}}">
+    <view wx:if="{{adData[adID].showAd}}" style="position: fixed;width: 100%; height: 100%; left: 0; top: 0; background: rgba(0, 0, 0, .3); z-index: 9999;">
+      <view data-id="{{adID}}" data-type="{{adData[adID].type}}" bindtap="clickAd" style="display: flex;flex-direction: row;justify-content: center;flex-wrap: wrap;position: relative;border-radius: 15rpx; background: white; width: 540rpx !important;height: 600rpx !important; overflow: hidden; left: calc(50% - 270rpx); top: calc(35% - 250rpx)">
+        <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top: 20rpx;margin-bottom: 20rpx">
+          <image mode="widthFix" src="{{adData[adID].logo}}" style="width: 120rpx;border-radius: 80rpx;margin-bottom: 20rpx"></image>
+          <text style="font-weight: bolder;font-size: 36rpx;color:#333;">{{adData[adID].name}}</text>
+        </view>
+        <text style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top:-10rpx;text-align:center;background: #17abdb;color: white;width:100%;height: 80rpx;font-size: 32rpx;line-height:40rpx;padding: 20rpx 40rpx;box-sizing:unset!important;">{{adData[adID].desc}}</text>
+        <text wx:if="{{adData[adID].showIcon}}" style="position: absolute; right: -3rpx; bottom: 8rpx; padding: 5rpx 10rpx; background: rgba(0, 0, 0, .3); font-size: 20rpx; color: #fff; text-align: center; border-bottom-left-radius: 10rpx;border-top-left-radius: 10rpx;font-weight: bolder">微量联盟
+        </text>
+        <button style="height: 76rpx!important;font-size: 32rpx!important;font-weight:bolder;padding-right: 80rpx!important;padding-left: 80rpx!important;line-height: 76rpx!important;color:#17abdb;background:white;font-size:unset!important;border:#17abdb solid 1rpx;">立即体验</button>
+      </view>
+      <view style="display:flex;position: relative;left: calc(50% - 35rpx); top: calc(40% - 270rpx)">
+        <image bindtap="close" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAADxUlEQVRogd2av2sbVxzAP76zdGqRUKxIURrs0EG2QhOooBSK4ToVDDZePHrJGggtoYuHQCbPWeJAh0LoH+EhELwYOnTy0JbKLi1YJdQIq3KlOJJOkjO8O0c5zqf3dE/Kjw8ILO6e7sPzu+/3e993U0THBFJAEvgIiAMxwHCP9wEH6AAvgSbQAHpRLjoVYdwMcBkhrfo7Zwj5Y+A/97uygAoGkAPyiFnVgQMcAVXEf0cKFfE0MAdYal7StIEKcCJzsoy4AcwiZnoSVIF/GDL7w8RjQAH4WJOULKfAn4hlFIgZMtgCFhCRYtLEgEuIZRMYfS4SjwNFxreeZZhGyNcJkA8SN4B5IDFeLym8HFHDFzKDxK8jIsi7Qsz9vBFtDN9JaSA7KSMFsvgm0/D9PTdRHTXmGPAdFM8hcTMeHh7e73Q6Tzc3NwtRTWzbTlar1Yflcvk7idMtBnKJJz6FSONDqdVqz2Ox2OWNjY0fosjbtp3c3t5+nM1mv85kMp9KDsvjOnviM0jWHqVS6cn+/v5P09PTl0aV96RTqdTNRqPx29ra2gPJoV58P48qsyjE7K2trV/W19etXC731eLi4jeWZf28s7NTG0V6ZWXl7u7ublP22q5zzeB1rFSiWCw+Up15DdK4rqaJCDMZVXFQm3lN0iDuxxcmIkYmRxGXldco7eGYwBUipvcw+TFIA/RM4BNEQROJIHnHcTpjkAbEeikRXt4qUS6Xv11YWLjd7XbrrVbr32QyeUO3NNCdAr7Q9GPnHBwcfF8oFNYBms3mH8vLy3c0SgOc+YusyNi2nczn85973xOJxNWlpaWruq9jMpBGo+K/ESuVyrNsNvulapKSoGcQ8lynQlD0mJ+ffxi1PLiArpeAIoXDsJAXpTwI4YUBtMYl7TFKeTCElolY3yOlfJXkonnmjwxED0+5dzdKRtQ082dAw0A8+jfGLa1RvoGb8j1mxi3tEXHZPAdeei04A7iFxFNQvV7/MZ1Ol3Skca88cBznOB6PL0kMcYBfgb5XXPURrd7ZYSMty7pycnKyt7q6ei9qGi8Wi4/29vaamUzmmuSQI9f1jaanAXzG2227hdEGfscVH0z1fUR/+l2lwkDr2V/OthENz0m3lYdxjFgm5wTV4Q1EGaBrqyQqp8BfSDQ9z4D/EeFR2wPGiHSAA6DrP3CRWA/RHU2j4bFuRNoI6U7QwbAZ7SG28lJMftmcEiINw5dCH9FUjzG5G7YK/M2QDdwPertwkPdyg9Y/7r3aEg9i8CWEBGIpBb2E0EY8bWl5CeEVHEP9mLV+7ZcAAAAASUVORK5CYII="
+               style="width: 70rpx !important; height: 70rpx !important; padding: 10rpx; z-index: 2"></image>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{adData[adID].type==='fixed'}}">
+    <view wx:if="{{adData[adID].showAd}}" class="wlad-wrap" style="position: fixed; display: flex; width: 100rpx !important; right: 34rpx; bottom: 40rpx; z-index: 9998;">
+      <image wx:if="{{adData[adID].showFixedClose}}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAADxUlEQVRogd2av2sbVxzAP76zdGqRUKxIURrs0EG2QhOooBSK4ToVDDZePHrJGggtoYuHQCbPWeJAh0LoH+EhELwYOnTy0JbKLi1YJdQIq3KlOJJOkjO8O0c5zqf3dE/Kjw8ILO6e7sPzu+/3e993U0THBFJAEvgIiAMxwHCP9wEH6AAvgSbQAHpRLjoVYdwMcBkhrfo7Zwj5Y+A/97uygAoGkAPyiFnVgQMcAVXEf0cKFfE0MAdYal7StIEKcCJzsoy4AcwiZnoSVIF/GDL7w8RjQAH4WJOULKfAn4hlFIgZMtgCFhCRYtLEgEuIZRMYfS4SjwNFxreeZZhGyNcJkA8SN4B5IDFeLym8HFHDFzKDxK8jIsi7Qsz9vBFtDN9JaSA7KSMFsvgm0/D9PTdRHTXmGPAdFM8hcTMeHh7e73Q6Tzc3NwtRTWzbTlar1Yflcvk7idMtBnKJJz6FSONDqdVqz2Ox2OWNjY0fosjbtp3c3t5+nM1mv85kMp9KDsvjOnviM0jWHqVS6cn+/v5P09PTl0aV96RTqdTNRqPx29ra2gPJoV58P48qsyjE7K2trV/W19etXC731eLi4jeWZf28s7NTG0V6ZWXl7u7ublP22q5zzeB1rFSiWCw+Up15DdK4rqaJCDMZVXFQm3lN0iDuxxcmIkYmRxGXldco7eGYwBUipvcw+TFIA/RM4BNEQROJIHnHcTpjkAbEeikRXt4qUS6Xv11YWLjd7XbrrVbr32QyeUO3NNCdAr7Q9GPnHBwcfF8oFNYBms3mH8vLy3c0SgOc+YusyNi2nczn85973xOJxNWlpaWruq9jMpBGo+K/ESuVyrNsNvulapKSoGcQ8lynQlD0mJ+ffxi1PLiArpeAIoXDsJAXpTwI4YUBtMYl7TFKeTCElolY3yOlfJXkonnmjwxED0+5dzdKRtQ082dAw0A8+jfGLa1RvoGb8j1mxi3tEXHZPAdeei04A7iFxFNQvV7/MZ1Ol3Skca88cBznOB6PL0kMcYBfgb5XXPURrd7ZYSMty7pycnKyt7q6ei9qGi8Wi4/29vaamUzmmuSQI9f1jaanAXzG2227hdEGfscVH0z1fUR/+l2lwkDr2V/OthENz0m3lYdxjFgm5wTV4Q1EGaBrqyQqp8BfSDQ9z4D/EeFR2wPGiHSAA6DrP3CRWA/RHU2j4bFuRNoI6U7QwbAZ7SG28lJMftmcEiINw5dCH9FUjzG5G7YK/M2QDdwPertwkPdyg9Y/7r3aEg9i8CWEBGIpBb2E0EY8bWl5CeEVHEP9mLV+7ZcAAAAASUVORK5CYII=" bindtap="close" style="position: absolute; top: -10rpx; right: -14rpx; width: 30rpx !important; height: 30rpx !important; z-index: 2"></image>
+      <image src="{{adData[adID].logo}}" mode="widthFix" data-id="{{adID}}" data-type="{{adData[adID].type}}" bindtap="clickAd" style="width: 100%;border-radius: 50%"></image>
+      <text wx:if="{{adData[adID].showIcon}}" style="position: absolute; right: 27rpx; bottom: 6rpx; width: 50rpx !important; height: 20rpx !important; line-height: 24rpx; background: rgba(0, 0, 0, .3); font-size: 16rpx; color: #fff; text-align: center; border-radius: 6rpx;">广告
+      </text>
+    </view>
+  </view>
+</wl-ad>

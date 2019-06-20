@@ -1,0 +1,35 @@
+<view class="page-body">
+    <view class="btn-area" wx:if="{{addressList.length===0}}">
+        <view class="container-kong">
+            <image src="http://img.tracenet.cn/bg10.png"></image>
+        </view>
+        <view class='coupon-none'>您还没有收货地址</view>
+    </view>
+
+    <view class="btn-area" wx:else>
+        <view class="address-item" wx:for-index="idx" wx:for="{{addressList}}" wx:key="{{item.id}}">
+            <view class="address-item-title">
+                <text class="address-item-title-name">{{item.userName}}</text>
+                <text>{{item.telNumber}}</text>
+            </view>
+            <view class="address-item-detail">
+                {{item.full_region}}{{item.detailInfo}}
+            </view>
+            <view class="address-item-bottom">
+                <view class="address-item-bottom-left" bindtap='setDefault' data-id="{{item.id}}" data-index="{{idx}}">
+                    <image wx:if="{{idx==choose}}" src="../../static/images/moren-address.png"></image>
+                    <image wx:else src="../../static/images/not-moren.png"></image>
+                    <text>设为默认</text>
+                </view>
+                
+                <view class="address-item-bottom-right">
+                    <navigator url="../addAddress/addAddress?provinceName={{item.provinceName}}&detail={{item.detailInfo}}&receiveName={{item.userName}}&tel={{item.telNumber}}&addressid={{item.id}}&cityName={{item.cityName}}&countyName={{item.countyName}}">
+                        <image src="../../static/images/edit.png" class="edit-image" data-id="{{item.id}}"></image>
+                    </navigator>
+                    <image src="../../static/images/delete.png" class="delete-image" bindtap='deleteAddress' data-id="{{item.id}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="fiexd-bottom" bindtap='addAddress'>新增收货地址</view>
+</view>

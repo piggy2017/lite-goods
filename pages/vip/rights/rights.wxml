@@ -1,0 +1,22 @@
+
+<view class="rights-img1">
+    <image src="http://img.tracenet.cn/bg57.jpg"></image>
+</view>
+<view class="rights-img2">
+    <image src="http://img.tracenet.cn/bg58.jpg"></image>
+</view>
+<view class="rights-img3">
+    <image src="http://img.tracenet.cn/bg59.jpg"></image>
+</view>
+<view class="rights-img4">
+    <image src="http://img.tracenet.cn/bg60.jpg"></image>
+</view>
+<view class="rights-img5">
+    <image src="http://img.tracenet.cn/bg61.jpg"></image>
+</view>
+<view class="rights-img6">
+    <image src="http://img.tracenet.cn/bg56.jpg"></image>
+</view>
+<view class="become-vip" bindtap='recharge'>
+    立即成为会员
+</view>

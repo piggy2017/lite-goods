@@ -1,0 +1,38 @@
+<view class="address-add">
+    <form class="add-address-form">
+        <view class="form-cell">
+            <view class="form-cell-label">姓名:</view>
+            <view class="form-cell-input">
+                <input bindinput='bindName' value="{{name}}" placeholder-class="pla-class" class="weui-input" name="name" placeholder='请输入姓名'></input>
+            </view>
+            <!-- <view class="lianxi-ren">
+                <image src="../../static/images/lianxiren.png"></image>
+            </view> -->
+        </view>
+         <!-- 手机号码 -->
+      
+        <view class="form-cell">
+            <view class="form-cell-label">手机号:</view>
+            <view class="form-cell-input">
+            <input bindinput='bindPhone' value="{{phone}}" type="number" placeholder-class="pla-class" class="weui-input" name="phone" placeholder='请输入手机号码'></input>
+            </view>
+        </view>
+          <!-- 选择地区 -->
+        <view class="form-cell">
+            <view class="form-cell-label">所在地区:</view>
+            <view class="form-cell-input">
+            <picker bindchange="bindAreaChange" mode="region" value="{{addressArea}}" >
+                <view class="color-09">{{addressArea}}</view>
+                </picker>
+            </view>
+        </view>
+            <!-- 街道地址 -->
+        <view class="form-cell-text">
+            <view class="form-cell-label">详细地址:</view>
+            <view class=" form-cell-input-text">
+                <textarea bindinput="textAddress" value="{{Address}}" class="address-textarea" placeholder="街道门牌信息"  placeholder-class="pla-class"></textarea>
+            </view>
+        </view>
+    </form>
+    <view class="save-address" bindtap='saveAddress'>保存</view>
+</view>

@@ -1,0 +1,120 @@
+page{
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.comment-item{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20rpx;
+    min-height: 516rpx;
+}
+.comment-list{
+    padding-bottom: 150rpx;
+}
+.comment-item-title{
+    height: 100rpx;
+    padding: 0 30rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #eee;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #666;
+    letter-spacing: 0
+}
+.comment-item-img{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.comment-item-img-left{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.comment-item-img .comment-item-img-left image{
+    height: 56rpx;
+    width: 56rpx;
+    border-radius: 4rpx;
+}
+.star-list{
+    height: 56rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.star-list image{
+    width: 36rpx;
+    height: 34rpx;
+    margin-right: 20rpx;
+}
+.comment-item-title-tex{
+    font-weight: bold;
+    font-size: 30rpx;
+    color: #333;
+    margin: 0 40rpx 0 20rpx;
+}
+.comment-item-content textarea{
+    width: 690rpx;
+    height: 200rpx;
+    font-size: 28rpx;
+    margin: 20rpx auto 0 auto;
+    color: #333;
+    line-height: 45rpx;
+}
+.pla-class{
+    font-family: PingFangSC-Light;
+    font-size: 28rpx;
+    color: #AAAAAA;
+    line-height: 45rpx;
+}
+.comment-item-content-pic{
+    width: 690rpx;
+    margin: 0 auto;
+}
+.comment-item-content-pic image{
+    width: 160rpx;
+    height: 160rpx;
+}
+.choose-image{
+    width: 160rpx;
+    height: 160rpx;
+}
+.choose-image image{
+    width: 160rpx;
+    height: 160rpx;
+}
+.refund-choose-image{
+    width: 690rpx;
+    margin: 0 auto;
+    height: 160rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 20rpx;
+}
+.choosed-img image{
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 6rpx;
+}
+.choosed-img image:not(:first-child){
+    margin-left: 15rpx;
+}
+.choosed-img image:last-child{
+    margin-right: 15rpx;
+}
+.to-submit{
+    width: 100%;
+    background: #D53333;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+}

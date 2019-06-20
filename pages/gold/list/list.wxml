@@ -1,0 +1,39 @@
+<view class="postage">
+    <view class="postage-top">
+        <image src="../../../static/images/gold-banner.png" class="banner-gold-pic"></image>
+        <view class="gold-count">
+            <text>我的金币</text>
+            <text class="gold-c">{{goldCount}}</text>
+        </view>
+        <view class="more-img" bindtap='goTree'>
+            金币明细
+        </view>
+    </view>
+    <view class="" wx:if="{{postAgeList.length==0}}">
+        <view class="wraper">
+            <view class="container-kong">
+                <image src="http://img.tracenet.cn/bg15.png"></image>
+            </view>
+            <view class='coupon-none'>未找到相关商品</view>
+            <view class='goHome' bindtap='gHome'>去别处逛逛</view>
+        </view>
+    </view>
+    <view class="postage-content" wx:else>
+        <view class="postage-item" wx:for="{{postAgeList}}" wx:key="{{item.id}}">
+            <!-- <navigator url="../../goods/goods?id={{item.id}}&gold=1" class="hot-goods-content-item-url"> -->
+            <navigator url="../../activity-goods/activity-goods?goldcoinId={{item.goldcoinId}}&type=goldCoin&goodsId={{item.id}}" class="hot-goods-content-item-url">
+                <image src="{{item.list_pic_url}}"></image>
+                <view class="hot-goods-content-item-info">
+                    <view class="hot-goods-content-item-name">{{item.name}}</view>
+
+                    <view class="sale-num">
+                        <view class="sale-num-left">￥{{item.retail_price}}</view>
+                        <view class="sale-num-right">
+                            金币可抵扣{{item.gold_coin_discount*100}}%
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

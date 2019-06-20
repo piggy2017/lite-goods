@@ -1,0 +1,392 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.container-detail{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.goods-banner{
+    width: 100%;
+    height: 750rpx;
+    border-bottom: 1rpx solid #fff;
+    position: relative;
+}
+.banner{
+    width: 750rpx;
+    height: 750rpx;
+}
+.banner image{
+    width: 100%;
+    height: 100%;
+}
+.group-info{
+    position: absolute;
+    width: 280rpx;
+    height: 86rpx;
+    background-color: rgba(0, 0, 0, 0.5);
+    left:0;
+    bottom: 120rpx;
+    border-bottom-right-radius: 43rpx;
+    border-top-right-radius: 43rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    z-index: 9;
+}
+.group-info image{
+    width: 64rpx;
+    height: 64rpx;
+    margin-left: 12rpx;
+    border-radius: 50%;
+}
+.group-info-right{
+    margin-left: 10rpx;
+    font-family: PingFangSC-Semibold;
+    font-size: 24rpx;
+    color: #FFFFFF;
+}
+.group-person{
+    opacity: 0.8;
+    font-family: PingFangSC-Regular;
+    font-size: 20rpx;
+}
+.lottery-info{
+    position: absolute;
+    width: 690rpx;
+    padding: 0 30rpx;
+    height: 80rpx;
+    z-index: 9;
+    bottom: 0;
+    background-color: rgba(213, 51, 51, 0.75);
+    line-height: 80rpx;
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.lottery-info-left{
+    font-family: PingFangSC-Medium;
+    font-size: 50rpx;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.lottery-info-left-price{
+    opacity: 0.8;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    margin-left: 10rpx;
+}
+.text-decoration{
+    text-decoration: line-through;
+    margin-left: 6rpx;
+}
+.lottery-info-right{
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.lottery-info-right image{
+    width: 46rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+.goods-name{
+    padding: 20rpx 30rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    background-color: #fff;
+    color: #333333;
+    font-weight: bold;
+}
+.goods-service{
+    margin-top: 20rpx;
+    height: 100rpx;
+    background-color: #fff;
+    padding: 0 30rpx;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #888888;
+}
+.goods-service-item{
+    margin-left: 24rpx;
+    display: inline-block;
+}
+.goods-service-tit{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 680rpx;
+}
+.goods-service-tit-text{
+    color: #333;
+    font-weight: bold;
+    width: 84rpx;
+}
+.goods-ser-item{
+    width: 580rpx;
+     text-overflow: ellipsis;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical !important;
+}
+.goods-service-item text{
+    margin-left: 10rpx;
+    vertical-align: middle;
+}
+.goods-service-right image{
+    width: 10rpx;
+    height: 20rpx;
+}
+.goods-service-item:first-child{
+    margin-left: 16rpx !important;
+}
+.goods-service-item image{
+    height: 32rpx;
+    width: 32rpx;
+    vertical-align: middle;
+}
+.service-popup-wraper{
+      padding-bottom: 34rpx;
+}
+.popup{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+}
+.popup-wraper{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    min-height: 200rpx;
+    width: 100%;
+    background: #fff;
+    overflow-y: auto;
+    z-index: 999;
+    transform: translateY(150%);  
+    transition: all 0.4s ease; 
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+.zan-dialog-show .popup-wraper{
+     transform: translateY(0);
+  }
+.zan-dialog-show .popup-wraper-2{
+     transform: translateY(0);
+}
+
+.popup-wraper-title{
+    width: 100%;
+    height: 80rpx;
+    text-align: center;
+    margin-top: 20rpx;
+}
+.view-done{
+    height: 80rpx;
+    width: 670rpx;
+    background: #D53333;
+    border-radius: 50rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80rpx;
+    margin: 90rpx auto 0 auto;
+}
+.serv-pop-item{
+    padding: 40rpx 40rpx 0 40rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    /* align-items: flex-start; */
+}
+.serv-pop-item-icon{
+    width: 36rpx;
+    height: 36rpx;
+    margin-top: 4rpx;
+    display: block;
+}
+.serv-pop-item-right{
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #999999;
+    margin-left: 20rpx;
+    width: 600rpx;
+}
+.serv-pop-item-right-title{
+    font-size: 30rpx;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+.serv-pop-item-right-content{
+    line-height: 44rpx;
+}
+.goods-about-detail{
+    padding-bottom: 120rpx;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+.goods-about-detail image{
+    display: block !important;
+}
+.view-detail{
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    text-align: center;
+    color: #333333;
+    padding: 30rpx 0;
+}
+.join-lottery{
+    width: 750rpx;
+    height: 90rpx;
+    text-align: center;
+    line-height: 90rpx;
+    background: #D53333;
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+}
+.popup-wraper-2{
+    position:fixed;
+    left:0;
+    bottom:0;
+    min-height:318rpx;
+    width: 750rpx;
+    overflow-y:auto;
+    z-index:999;
+    transform:translateY(150%);
+    background-color: #fff;
+    transition:all 0.4s ease;
+}
+.address-title{
+    width: 690rpx;
+    padding: 0 30rpx;
+    margin: 0 auto;
+    height: 88rpx;
+    font-size: 28rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background: #F4F4F4;
+}
+.title-center{
+    font-weight: bold;
+    color: #000;
+}
+.title-left{
+    color: #aaa;
+}
+.title-right{
+    color: #D53333;
+}
+.address-content{
+    width: 100%;
+    min-height: 400rpx;
+    max-height: 680rpx;
+    overflow: auto;
+}
+.address-item{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid #ddd;
+}
+.address-item-left{
+    width: 620rpx;
+    margin-left: 30rpx;
+}
+.address-item-right{
+    margin-right: 30rpx;
+}
+.address-item-right image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.address-item-left-top{
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #333333;
+    font-weight: bold;
+}
+.mar-left-30{
+    margin-left: 30rpx;
+}
+.address-detail{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #666666;
+    margin-top: 10rpx;
+}
+.moren{
+    width: 60rpx;
+    height: 32rpx;
+    display: inline-block;
+    line-height: 32rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 20rpx;
+    background: #D53333;
+    border-radius: 6rpx;
+    margin-left: 20rpx;
+    font-weight: normal;
+}
+.center{
+    text-align: center;
+}
+.add-address-tishi{
+    margin-top: 20rpx;
+    width: 328rpx;
+    height: 164rpx;
+    margin-left: 220rpx;
+}
+.tishi-1{
+    margin: 34rpx 0 12rpx 0;
+    font-family: PingFangSC-Regular;
+    font-size: 32rpx;
+    color: #333333;
+    letter-spacing:1.04rpx;
+}
+.tishi-2{
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #999999;
+    letter-spacing: 1rpx;
+}
+.group-info-right-name{
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden;
+}

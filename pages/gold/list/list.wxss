@@ -1,0 +1,138 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.postage-top{
+    width: 100%;
+    height: 300rpx;
+    position: relative;
+}
+.postage-top .banner-gold-pic{
+    width: 100%;
+    height:100%;
+}
+.container-kong{
+    margin: 120rpx auto 0 auto;
+    width: 272rpx;
+    height: 240rpx;
+}
+.container-kong image{
+    width: 272rpx;
+    height: 240rpx;
+}
+.coupon-none{
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #f08d7e;
+}
+.goHome{
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 30rpx;
+    border: 1rpx solid #ddd;
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+    margin: 40rpx auto 0 auto;
+}
+.gold-count{
+    position: absolute;
+    z-index: 9;
+    left: 66rpx;
+    top: 80rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #fff;
+    font-weight: bold;
+}
+.gold-c{
+    font-size: 48rpx;
+    margin-left: 10rpx;
+}
+.more-img{
+    position: absolute;
+    z-index: 9;
+    left: 66rpx;
+    top: 160rpx;
+    width: 160rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    text-align: center;
+    border-radius: 28rpx;
+    color: #fff;
+    font-size: 24rpx;
+    background-color: #FD9039;
+}
+.more-img image{
+    width: 152rpx;
+    height: 60rpx;
+}
+.postage-content{
+    width:690rpx;
+    display:flex;
+    flex-flow:row wrap;
+    margin:0 auto 0 auto;
+}
+.postage-item{
+    width:340rpx;
+    height:auto;
+    background-color:#fff;
+    margin-top:20rpx;
+    padding-bottom:20rpx;
+    border-radius:8rpx;
+}
+.postage-item:nth-child(2n){
+    margin-left: 10rpx;
+}
+.hot-goods-content-item-url{
+    width: 340rpx;
+}
+.hot-goods-content-item-url image{
+    width: 340rpx;
+    height: 340rpx;
+    border-radius: 10rpx;
+}
+.hot-goods-content-item-info{
+    width: 308rpx;
+    margin: 0 auto;
+}
+.hot-goods-content-item-name{
+    width: 100%;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #333333;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical !important;
+    font-weight: bold;
+    overflow: hidden;
+}
+.sale-num{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 16rpx;
+    /* justify-content: space-between; */
+}
+.sale-num-left{
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #D53333;
+    font-weight: bold;
+}
+.sale-num-right{
+    width: 182rpx;
+    height: 40rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 20rpx;
+    line-height: 36rpx;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 10rpx;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAREAAAA2CAMAAADXlF2GAAAATlBMVEUAAADWQUHVQUHWQUHkVFT////WQkLWQUHXQkLXQkLYRkbdTU3WQUHWQUHWQkLXQkLXRETWRkbbSUnWQkLWQkLWQkLWQUHVRETVQUHVQUEN81YrAAAAGXRSTlMAv/PiBgH4ynNXGA7w051lPywcjrOpqE+Nn0RTrgAAAPFJREFUaN7t20sSgkAMhOEGQRQf+Nbc/6KWC6ugZ1y6yv8dIVUzNJNEP3XPY7NaRyLtMPX6aTy2kVAzqq7bpKzHpyS9anZNpDWpYhwir0Gl3SESa1XoEh+ZD7n+HrnJXSM5mU1kp6VtpKeFU6rUXqe58z6gmcsqECQzRzJzJDNHMnMkM0cycyQzRzJzJLNaRQgic9yqTtItsKwItwgV4dRws/L1JaE5UrzjT6/Aa0CBF6M/0tcrYC/PjwDdCTpYdDnphDMtUWCipsDUVYHJvL9VhKT2xYSvYwrctGwKmIFtEjOxceQbR2yl+VYam4u+ufgG96ZbabbUtLwAAAAASUVORK5CYII=")
+}

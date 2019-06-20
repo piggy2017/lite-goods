@@ -1,0 +1,54 @@
+<view class="lottery-list">
+    <view class="lottery-list-top">
+        <image src="http://img.tracenet.cn/bg6.png"></image>
+    </view>
+    <!-- <view class="goods-btn">
+        <view class="goods-btn-detail {{myType==0?'goods-btn-detail-active':''}} " data-type="0" bindtap='checkBtn'>所有商品</view>
+        <view class="goods-btn-comment {{myType==1?'goods-btn-detail-active':''}} " data-type="1" bindtap='checkBtn'>我的抽奖</view> 
+    </view> -->
+    <view class="lottery" wx:if="{{goodsList.length==0}}">
+        <view class="wraper">
+            <view class="container-kong">
+                <image src="http://img.tracenet.cn/bg15.png"></image>
+            </view>
+            <view class='coupon-none'>未找到相关商品</view>
+            <view class='goHome' bindtap='gHome'>去别处逛逛</view>
+        </view>
+    </view>
+    <view class="lottery" wx:else>
+        <view class="lottery-item" wx:for="{{goodsList}}" wx:key="{{item.lotteryId}}">
+            <navigator url="../goods-detail/goods-detail?id={{item.lotteryId}}" class="lottery-item-url">
+                <view class="lottery-item-image">
+                    <image src="{{item.primary_pic_url}}"></image>
+                    <view class="lottery-item-price">
+                        <view class="lottery-item-price-left">¥0.00</view>
+                        <view class="lottery-item-price-right">
+                            <view>原价</view>
+                            <view class="yuanjia">¥{{item.market_price}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="lottery-item-info">
+                    <view class="lottery-item-info-left">
+                        <view class="lottery-item-name">{{item.name}}</view>
+                        <view class="end-time">
+                            <view class="end-time-left">{{item.hours}}:{{item.min}}:{{item.sec}}</view>
+                            <view class="mar-left-10">后结束</view>
+                        </view>
+                    </view>
+                    <view class="lottery-item-info-right-wraper">
+                        <view class="lottery-item-info-right">
+                            马上抢
+                        </view>
+                        <view class="kaijiang-p">
+                            满{{item.limitNumber}}人开奖
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <!-- <view class="lottery" wx:elif="{{myType==1}}">
+        我的抽奖
+    </view> -->
+</view>

@@ -1,0 +1,221 @@
+page {
+    min-height:100%;
+    background-color:#f2f2f2;
+}
+.vip-info-top{
+    width: 100%;
+    height: 262rpx;
+    background-image: linear-gradient(-153deg, #2C2829 0%, #3B3737 98%);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.vip-info-left{
+    margin-left: 40rpx;
+    height: 124rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    color: #E8D1AC;
+}
+.vip-info-right{
+    margin-right: 40rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #333333;
+    height: 64rpx;
+    width: 172rpx;
+    line-height: 64rpx;
+    text-align: center;
+    background: #E8D1AC;
+    border-radius: 32rpx;
+    font-weight: bold;
+}
+.vip-image{
+    height: 124rpx;
+    width: 124rpx;
+    border-radius: 50%;
+}
+.vip-image image{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.vip-name{
+    margin-left: 24rpx;
+    width: 340rpx;
+}
+.vip-lives{
+    opacity: 0.8;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+}
+
+
+
+.vip-guoqi{
+    height: 120rpx;
+    width: 100%;
+    background: #FDF3E3;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #7C583B;
+     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between; 
+}
+.tishi-icon{
+    margin-left: 40rpx;
+    width: 36rpx;
+    margin-top: 20rpx;
+}
+.vip-guoqi-text{
+    margin: 16rpx 40rpx 0 12rpx
+}
+.tixian-money{
+    width: 100%;
+    height: 228rpx;
+    background-color: #fff;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #666666;
+}
+.tixian-money-title{
+    padding:0 40rpx;
+    margin-top: 24rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.tixian-money-logs{
+    font-size: 26rpx;
+    color: #C0A06B;
+    background: #FFFFFF;
+    border: 2rpx solid #C0A06B;
+    border-radius: 28px;
+    width: 160rpx;
+    height: 52rpx;
+    line-height: 50rpx;
+    text-align: center;
+}
+.tixian-money-content{
+    height: 124rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10rpx;
+}
+.tixian-money-content-left{
+    margin-left: 40rpx;
+    font-size: 100rpx;
+    color: #000000;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.font-weight{
+    font-weight: bold;
+}
+.tishi-icon image{
+    width: 36rpx;
+    height: 36rpx;
+}
+.yuan{
+    font-size: 50rpx;
+    margin-left: 10rpx;
+}
+.tixian-money-content-right{
+    margin-right: 40rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 46rpx;
+    color: #C0A06B;
+}
+.tixian-money-content-right image{
+    width: 40rpx;
+    height: 34rpx;
+    margin-left: 20rpx;
+}
+.view-more-rights{
+    height: 106rpx;
+    width: 100%;
+    background-color: #fff;
+    margin: 16rpx 0;
+     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    color: #333333;
+}
+.view-more-rights-left{
+    margin-left: 40rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    align-items: center;
+}
+.view-more-rights-right image{
+    width:12rpx;
+    height:24rpx;
+    margin-right:40rpx;
+}
+.view-more-rights-left image{
+    width: 44rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+}
+.myvip-info{
+    background: #FFFFFF;
+    width: 100%;
+}
+.myvip-info-item{
+    width: 100%;
+    height: 106rpx;
+    position: relative;
+    font-size: 30rpx;
+    color: #333333;
+}
+.myvip-info-item-1::after{
+    position: absolute;
+    left: 110rpx;
+    right: 20rpx;
+    bottom: 1rpx;
+    height: 1rpx;
+    background-color: #eee;
+    z-index: 99;
+    content: "";
+}
+.myvip-info-item-url{
+    width: 100%;
+    height: 100%;
+     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.myvip-info-item-left{
+    margin-left: 40rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    align-items: center;
+}
+.myvip-info-item-left image{
+    width: 46rpx;
+    height: 44rpx;
+    margin-right: 30rpx;
+}
+.myvip-info-item-right{
+    margin-right: 40rpx;
+}
+.myvip-info-item-right image{
+     width:12rpx;
+    height:24rpx;
+}

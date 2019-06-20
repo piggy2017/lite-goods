@@ -1,0 +1,89 @@
+<view class="refund">
+    <view class="goods-info">
+        <view class="goods-info-img">
+            <image src="{{orderGoodsInfo.list_pic_url}}"></image>
+        </view>
+        
+        <view class="goods-info-content">
+            <view class=" name">{{orderGoodsInfo.goods_name}}</view>
+            <view class="goods-info-content-spi" wx:if="{{orderGoodsInfo.goods_specifition_name_value!=null}}">
+                {{orderGoodsInfo.goods_specifition_name_value}}
+            </view>
+            <view class="goods-info-content-spi" wx:else>默认规格</view>
+        </view>
+        <view class="goods-info-right">
+            <view class="goods-info-price font-weight">￥{{orderGoodsInfo.retail_price}}</view>
+            <view class="goods-info-num">X{{orderGoodsInfo.number}}</view>
+        </view>
+    </view>
+    <view class="refund-num" wx:if="{{hasFahuo==true}}">
+        <view class="refund-label font-weight">退货数量</view>
+        <view class="refund-num-right font-weight">
+            <view class="reduce-num-img" bindtap='reduceNum'>
+                <image src="../../../static/images/reduce.png"></image>
+            </view>
+            <view class="has-number">{{refundNum}}</view>
+            <view class="add-num-img" bindtap='addNum'>
+                <image src="../../../static/images/add.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="refund-reason" wx:if="{{hasFahuo==true}}">
+        <view class="refund-label font-weight">退货原因</view>
+        <view class="choose-reason">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="weui-input">{{array[index]}}</view>
+            </picker>
+        </view>
+        <view class="choose-down">
+            <image src="../../../static/images/more.png"></image>
+        </view>
+    </view>
+    <view class="refund-reason" wx:if="{{hasFahuo==false}}">
+        <view class="refund-label font-weight">退货原因</view>
+        <view class="choose-reason">
+            <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+                <view class="weui-input">{{array1[index1]}}</view>
+            </picker>
+        </view>
+        <view class="choose-down">
+            <image src="../../../static/images/more.png"></image>
+        </view>
+    </view>
+
+    <view class="refund-money" wx:if="{{hasFahuo==false}}">
+        <view class="refund-label font-weight">退款金额</view>
+        <view class="choose-reason font-weight text-red">
+            ¥{{order_price}}
+        </view>
+    </view>
+    
+    <view class="refund-money" wx:if="{{hasFahuo==true}}">
+        <view class="refund-label font-weight">退款金额</view>
+        <view class="choose-reason font-weight text-red">
+            ¥{{refundmoney}}
+        </view>
+    </view>
+<!-- 
+     <view class="refund-money" wx:if="{{gold_coin_price!=0}}">
+        <view class="refund-label font-weight">退款金币</view>
+        <view class="choose-reason font-weight text-red">
+            {{gold_coin_price*100}}个
+        </view>
+    </view> -->
+
+    <view class="refund-instruct">
+        <textarea class="refund-instruct-text" bindinput="getValue" value="{{instructValue}}" placeholder="这里描述你的退款或退货说明~" placeholder-class="place-class">
+        </textarea>
+        <view class="refund-choose-image" wx:if="{{hasFahuo}}">
+            <view class="choosed-img choosed-img-post" wx:if="{{imageList.length>0}}">
+                <image wx:for="{{imageList}}" src="{{item}}" wx:for-index="idx" wx:key="idx" data-src="{{item}}" bindtap='previewImage'></image>
+            </view>
+            <view class="choose-image"  bindtap='changeImg'>
+                <image src="../../../static/images/post-voucher.png"></image>
+            </view>
+        </view>
+    </view>
+    
+    <view class="to-submit" bindtap='submitRefund'>提交</view>
+</view>

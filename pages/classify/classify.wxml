@@ -1,0 +1,40 @@
+<view class="">
+    <view class="scroll-top">
+        <scroll-view class="scroll-view_hot" scroll-x="true" bindscroll="scroll">
+            <view class="scroll-view_hot-item {{ cateId == item.id ? 'scroll-view_hot-item-active' : ''}}" 
+            data-id="{{item.id}}" data-index="{{index}}" wx:for="{{navList}}" bindtap="switchCate" wx:key="id">
+                {{item.name}}
+            </view>
+        </scroll-view>
+        <view class="search-view" bindtap='gosearch'>
+            <image src="../../static/images/search-w.png"></image>
+            <text>输入商品名称搜索</text>
+            <!-- <input class="search-input" type="search" placeholder-class="search-placeholder" bindfocus='inputFoucs' bindinput="bindKeyInput" value="{{search}}" placeholder='输入商品名称搜索' bindconfirm="search"></input> -->
+        </view>
+    </view>
+    <view class="goods-sort">
+        <!-- <view class="goods-sort-item {{sortTye==1?'goods-sort-active':''}}" data-type="1" bindtap='sort'>综合</view> -->
+        <view class="goods-sort-item {{sortTye==2?'goods-sort-active':''}}" data-type="2" bindtap='sort'>销量</view>
+        <view class="goods-sort-item {{sortTye==3?'goods-sort-active':''}} {{priceSort==1?'sort-price-1':''}} {{priceSort==2?'sort-price-2':''}} goods-sort-price" data-type="3" bindtap='sort'>价格</view>
+    </view>
+    <view class="hot-goods-content">
+            <view class="hot-goods-content-item" wx:for="{{goodsList}}" wx:for-index="index" 
+            wx:for-item="item" wx:key="{{item.id}}">
+                <navigator url="../goods/goods?id={{item.id}}" class="hot-goods-content-item-url">
+                    <image src="{{item.list_pic_url}}"></image>
+                    <view class="hot-goods-content-item-info">
+                         <view class="hot-goods-content-item-name">{{item.name}}</view>
+                         <view class="vip-back">
+                            <text class="vip-back-left">返利:￥{{item.rebate_price}}</text>
+                            <text class="vip-back-right">+ ￥{{item.sub_rebate_price}}(会员)</text>
+                         </view>
+                         <view class="sale-num">
+                            <view class="sale-num-left">￥{{item.retail_price}}</view>
+                            <view class="sale-num-right">已售:{{item.sell_volume}}</view>
+                         </view>
+                    </view>
+                   
+                </navigator>
+            </view>
+        </view>
+</view>

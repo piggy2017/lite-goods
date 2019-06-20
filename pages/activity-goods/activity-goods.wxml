@@ -1,0 +1,148 @@
+<view class="{{showChooseSpice || isShowServicePop ?'container-detail':''}}">
+    <view class="goods-banner">
+        <swiper class="banner" indicator-dots="true" autoplay="true" indicator-active-color="#fff" interval="3000" duration="1000">
+            <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}" class="index-swiper-item">
+                <image src="{{item.img_url}}" background-size="cover"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="goods-info">
+        <view class="goods-info-title">
+            <view class="goods-info-title-left">
+                <text class="goods-info-price">￥{{goodsInfo.retail_price}}</text>
+                 <view class="sale-num-right" wx:if="{{discount!=null&&discount!=''}}">
+                      金币可抵扣{{discount*100}}%
+                  </view>
+                
+                <!-- <view class="goods-info-fanli" wx:if="{{gold==false && wish==false}}">返利￥{{goodsInfo.rebate_price}}</view> -->
+            </view>
+            <!-- <view class="goods-info-title-vip" wx:if="{{gold==false && wish==false}}">会员再返￥{{goodsInfo.vip_rebate_price-goodsInfo.rebate_price}}</view> -->
+        </view>
+        <view class="goods-info-content">
+            <view class="goods-info-name">
+                <text>{{goodsInfo.name}}</text>
+            </view>
+            <view class="goods-info-right">
+                <button open-type='share' class="share-btn"  hover-class="none">
+                    <image src="../../static/images/share@2x.png"></image>
+                    <text>分享</text>
+                </button>
+            </view>
+        </view>
+        
+        <view class="goods-info-bot">
+            <view class="goods-info-bot-left">原价：¥{{goodsInfo.market_price}}</view>
+            <view class="soul-num">已售: {{goodsInfo.sell_volume}}</view>
+        </view>
+    </view>
+    <view class="goods-btn">
+        <view class="goods-btn-detail {{myType==0?'goods-btn-detail-active':''}} " data-type="0" bindtap='checkBtn'>商品详情</view>
+        <view class="goods-btn-comment {{myType==1?'goods-btn-detail-active':''}} " data-type="1" bindtap='checkBtn'>评价({{allCount}})           </view> 
+    </view>
+    
+    <view class="goods-about-detail" wx:if="{{myType==0}}">
+        <import src="../../lib/wxParse/wxParse.wxml" />
+        <template is="wxParse" data="{{wxParseData:goodsDetails.nodes}}" />
+    </view>
+    <view class="goods-comment" wx:elif="{{myType==1}}">
+        <view class="goods-comment-title">
+            <view class="goods-comment-title-left">
+                <view>满意度：</view>
+                <view class="goods-comment-titl-img">
+                    <image src="{{item}}" wx:for="{{starPic}}" wx:for-index="idx" wx:key="idx"></image>
+                </view>
+                
+            </view>
+             <view class="goods-comment-title-right">
+                <view class="comment-all {{imgType==0?'comment-goods-active':''}}" data-type="0" bindtap='checkPic'>全部</view>
+                <view class="comment-have-pic {{imgType==1?'comment-goods-active':''}}" data-type="1" bindtap='checkPic'>有图</view>
+             </view>
+        </view>
+        <view class="goods-comment-content">
+            <view class="goods-comment-item" wx:for="{{commentList}}" wx:key="{{item.id}}">
+                <image src="{{item.user_info.avatar}}" class="goods-comment-picurl"></image>
+                <view class="goods-comment-item-right">
+                    <view class="goods-comment-item-titl">
+                        <text class="conment-name">{{item.user_info.nickname}}</text>
+                        <text class="goods-comment-item-titl-time">{{item.add_time}}</text>
+                    </view>
+                    <view class="goods-comment-item-text" wx:if="{{item.content==null || item.content==''}}">此用户未填写评价内容</view>
+                    <view class="goods-comment-item-text" wx:else>{{item.content}}</view>
+                     <view class="comment-img-list">
+                        <image src="{{childItem.pic_url}}" bindtap='previewImg' data-id="{{item.id}}" data-src="{{childItem.pic_url}}" wx:for="{{item.pic_list}}" wx:key="{{childItem.id}}" wx:for-item="childItem"></image>
+                    </view>
+                    <!-- <view class="comment-goods-spicl">小包装红茶 500g</view> -->
+                </view>
+               
+            </view>
+        </view>
+    </view>
+    <view class="{{ isShowServicePop ? 'zan-dialog-show' : '' }}">
+            <view class="popup" wx:if="{{isShowServicePop}}" bindtap="clickModel">
+            </view>
+            <view class="popup-wraper service-popup-wraper">
+                <view class="serv-pop-item" wx:for="{{serviceList}}" wx:key="{{item.id}}">
+                     <image class="serv-pop-item-icon" src="{{item.picture}}"></image>
+                     <view class="serv-pop-item-right">
+                        <view class="serv-pop-item-right-title">{{item.title}}</view>
+                        <view class="serv-pop-item-right-content">{{item.content}}</view>
+                     </view>
+                </view>
+                <view class="view-done" bindtap="clickModel">完成</view>
+            </view>
+    </view>
+   
+    <view class="showChooseSpice" class="{{ showChooseSpice ? 'zan-dialog-show' : '' }}">
+        <view class="popup" wx:if="{{showChooseSpice}}" bindtap="clickModelt">
+        </view>
+        <view class="popup-wraper-2">
+            <view class="popup-wraper-2-bg"></view>
+            <view class="choose-pop-title">
+                <image src="{{goodsInfo.primary_pic_url}}"></image>
+                <view class="choose-pop-title-price">￥{{price}}
+  
+                </view>
+                <view>库存: {{inventory}}</view>
+            </view>
+            <view class="spec-con">
+               <view class="spec-con-item" wx:for="{{specificationList}}" wx:key="{{item.specification_id}}">
+                    <view class="spec-con-item-name">{{item.name}}:</view>
+                    <view class="values">
+                        <view class="spec-con-item-list {{vitem.checked ? 'selected' : ''}}" wx:for="{{item.valueList}}"  wx:for-item="vitem" wx:key="{{vitem.id}}" data-value-id="{{vitem.id}}" bindtap='clickSkuValue' data-name-id="{{vitem.specification_id}}">
+                        {{vitem.value}}
+                        </view>
+                    </view>
+               </view>
+               <view class="computed-number">
+                    <view class="computed-number-left">购买数量：</view>
+                     <view class="cart-item-computed">
+                        <view class="reduce-num" bindtap='cutNumber'>
+                            <image src="../../static/images/reduce.png"></image>
+                        </view>
+                        <view class="cart-item-number">{{number}}</view>
+                        <view class="add-num" bindtap='addNumber'>
+                            <image src="../../static/images/add.png"></image>
+                       </view>
+                    </view>
+               </view>
+               <view class="spac-sure-btn">
+                    <view class="spac-sure" bindtap='clickSure'>完成</view>
+                </view>
+            </view>
+            
+        </view>
+    </view>
+    <!-- <view class="goods-join" wx:if="{{gold==false && wish==false}}">
+        <view class="jion-cart">
+            <view class="jion-cart-icon">
+                <image src="../../static/images/icon-cart.png"></image>
+                <view class="cart-number">{{cartGoodsCount}}</view>
+            </view>
+        </view>
+        <view class="jion-cart-btn" bindtap='join'>加入购物车</view>
+        <view class="go-buy" bindtap='goBuy'>立即购买</view>
+    </view> -->
+    <view class="has-gold" wx:if="{{type=='bargain'}}" bindtap='goWish'>发起砍价</view>
+    <view class="has-gold" wx:else bindtap='goBuy'>立即购买</view>
+    
+</view>

@@ -1,0 +1,239 @@
+page {
+    min-height: 100%;
+    width: 100%;
+    background-color: #f2f2f2;
+    font-family: PingFangSC-Regular;
+}
+
+.refund {
+    width: 100%;
+}
+
+.goods-info {
+    width: 690rpx;
+    background-color: #fff;
+    height: 132rpx;
+    border-top: 1rpx solid #eee;
+    display: flex;
+    padding: 30rpx 30rpx;
+    flex-flow: row nowrap;
+}
+
+.goods-info-img {
+    height: 132rpx;
+    width: 132rpx;
+}
+
+.goods-info-img image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8rpx;
+}
+
+.goods-info-content {
+    margin-left: 18rpx;
+    width: 422rpx;
+    font-size: 28rpx;
+    color: #333;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.font-weight {
+    font-weight: bold;
+}
+
+.name {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden;
+}
+
+.goods-info-content-spi {
+    font-size: 24rpx;
+    color: #999;
+    margin-bottom: 8rpx;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden;
+}
+
+.goods-info-right {
+    width: 116rpx;
+    font-family: PingFangSC-Semibold;
+    font-size: 28rpx;
+    color: #333;
+    text-align: right;
+}
+
+.goods-info-num {
+    font-family: PingFangSC-Light;
+    font-size: 24rpx;
+    color: #888;
+    text-align: right;
+    margin-top: 8rpx;
+}
+
+.refund-num {
+    margin-top: 20rpx;
+    background-color: #fff;
+    width: 690rpx;
+    padding: 20rpx 30rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: 28rpx;
+}
+
+.refund-label {
+    font-family: PingFangSC-Semibold;
+    color: #333;
+}
+
+.refund-num-right {
+    font-family: PingFangSC-Medium;
+    color: #000;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.reduce-num-img image {
+    width: 32rpx;
+    height: 6rpx;
+}
+
+.add-num-img image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.add-num-img, .reduce-num-img {
+    width: 32rpx;
+    height: 32rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.has-number {
+    margin: 0 16rpx;
+    width: 40rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #000;
+    background: #eaeaea;
+    border-radius: 4rpx;
+    text-align: center;
+}
+
+.refund-reason {
+    margin-top: 20rpx;
+    background-color: #fff;
+    width: 690rpx;
+    padding: 20rpx 30rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 28rpx;
+}
+
+.choose-reason {
+    width: 500rpx;
+    padding-left: 24rpx;
+}
+
+.choose-down {
+    width: 50rpx;
+    text-align: right;
+}
+
+.choose-down image {
+    width: 13rpx;
+    height: 26rpx;
+}
+
+.refund-money {
+    border-top: 1rpx solid #ddd;
+    background-color: #fff;
+    width: 690rpx;
+    padding: 20rpx 30rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 28rpx;
+}
+
+.text-red {
+    color: #d53333;
+}
+
+.refund-instruct {
+    margin-top: 20rpx;
+    background-color: #fff;
+    width: 690rpx;
+    padding: 20rpx 30rpx;
+    font-size: 30rpx;
+}
+
+.place-class {
+    font-size: 30rpx;
+    color: #bbb;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+}
+
+.refund-instruct-text {
+    width: 100%;
+    height: 180rpx;
+}
+
+.choose-image {
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.choose-image image {
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.refund-choose-image {
+    width: 100%;
+    height: 160rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 20rpx;
+}
+
+.choosed-img image {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 6rpx;
+}
+
+.choosed-img image:not(:first-child) {
+    margin-left: 15rpx;
+}
+
+.choosed-img image:last-child {
+    margin-right: 15rpx;
+}
+
+.to-submit {
+    width: 100%;
+    background: #d53333;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+}

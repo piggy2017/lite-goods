@@ -1,0 +1,117 @@
+<view class="container center">
+    <view class="center-top">
+        <image class="bg-center" src="../../static/images/bg-center.png"></image>
+        <view class="user-info" bindtap='viewInfo'>
+            <view class="user-pic">
+                <image src="{{pic}}"></image>
+            </view>
+            <view class="user-info-detail">
+                <view>{{name}}</view>
+                <view class="nomal-vip">{{userInfo.userLevelName}}</view>
+            </view>
+            <view class="user-info-yue">
+                <view class="font-weight">￥{{userWallet.amount}}</view>
+                <view class="user-info-yue-text">钱包余额</view>
+            </view>
+        </view>
+        <view class="maiduo-vip-pic" bindtap='viewRights'>
+            <image src="../../static/images/le-vip.png"></image>
+        </view>
+        <view class="order-reduce-money">平均每单节省4.5元</view>
+    </view>
+    <view class="hr"></view>
+    <view class="my-order">
+        <view class="my-order-title">
+            <navigator url="../order/myorder/myorder?type=0" class="my-order-title-url">
+                <view>我的订单</view>
+                <image src="../../static/images/more.png"></image>
+            </navigator>
+        </view>
+        <view class="my-order-style">
+            <view class="my-order-style-item">
+                <navigator url="../order/myorder/myorder?type=1" class="my-order-style-item-item">
+                    <view class="image-wraper">
+                        <image src="../../static/images/wait-pay.png"></image>
+                        <view class="order-num" wx:if="{{unPay>0}}">{{unPay}}</view>
+                    </view>
+                    <text>待付款</text>
+                </navigator>
+            </view>
+            <view class="my-order-style-item">
+                <navigator url="../order/myorder/myorder?type=2" class="my-order-style-item-item">
+                    <view class="image-wraper">
+                        <image src="../../static/images/wait-delivler.png"></image>
+                        <view class="order-num" wx:if="{{unSend>0}}">{{unSend}}</view>
+                    </view>
+
+                    <text>待发货</text>
+                </navigator>
+            </view>
+            <view class="my-order-style-item">
+                <navigator url="../order/myorder/myorder?type=3" class="my-order-style-item-item">
+                    <view class="image-wraper">
+                        <image src="../../static/images/wait-get.png"></image>
+                        <view class="order-num" wx:if="{{unGet>0}}">{{unGet}}</view>
+                    </view>
+                    <text>待收货</text>
+                </navigator>
+            </view>
+            <view class="my-order-style-item">
+                <navigator url="../order/after-sales/after-sales" class="my-order-style-item-item">
+                    <view class="image-wraper">
+                        <image src="../../static/images/after-sales.png"></image>
+                        <view class="order-num" wx:if="{{refund>0}}">{{refund}}</view>
+                    </view>
+                    <text>退款/售后</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="about">
+        <view class="about-item">
+            <navigator url="../address/address" class="about-item-item">
+                <image src="../../static/images/address.png"></image>
+                <text>地址管理</text>
+            </navigator>
+        </view>
+        <view class="about-item">
+            <navigator url="../vip/rights/rights" class="about-item-item">
+                <image src="../../static/images/vip-gonglue.png"></image>
+                <text>会员攻略</text>
+            </navigator>
+        </view>
+        <view class="about-item">
+            <navigator url="../center-coupon/center-coupon" class="about-item-item">
+                <image src="../../static/images/center-kajuan.png"></image>
+                <text>卡券中心</text>
+            </navigator>
+        </view>
+        <view class="about-item">
+            <view class="about-item-item" bindtap='call'>
+                <image src="../../static/images/call.png"></image>
+                <text>联系客服</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="about-vip">
+        <view class="about-vip-child">
+            <navigator url="../lottery/lotteryorder/lotteryorder?type=0" class="about-vip-child-vip">
+                <image src="../../static/images/zero-1.png" class="lingyuan-choujiang"></image>
+                <view class="about-vip-t">
+                    <view class="center-font">零元抽奖</view>
+                    <view>您参与的好运单</view>
+                </view>
+            </navigator>
+        </view>
+        <view class="about-vip-child">
+            <navigator url="../wish/my-wish/my-wish" class="about-vip-child-vip">
+                <image src="../../static/images/center-wish.png" class="wish-icon-12"></image>
+                <view class="about-vip-t">
+                    <view class="center-font">愿望清单</view>
+                    <view>您的心愿购物单</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

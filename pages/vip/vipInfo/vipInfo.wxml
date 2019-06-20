@@ -1,0 +1,86 @@
+<view class="container">
+    <view class="vip-info-top">
+        <view class="vip-info-left">
+            <view class="vip-image">
+                <image src="{{pic}}"></image>
+            </view>
+            <view class="vip-name">
+                <view>{{name}}</view>
+                <view class="vip-lives">{{vipNmae}}<text wx:if="{{hasJoin==true}}">({{text}})</text></view>
+            </view>
+        </view>
+        <view class="vip-info-right" bindtap='joinVip' wx:if="{{noamlVip==0}}">
+            立即充值
+        </view>
+         <view class="vip-info-right" bindtap='joinVip' wx:if="{{noamlVip!=0}}">
+            立即续费
+        </view>
+    </view>
+    <view class="vip-guoqi"  wx:if="{{noamlVip==1}}">
+        <view class="tishi-icon">
+            <image src="../../../static/images/tishi.png"></image>
+        </view>
+        <view class="vip-guoqi-text">您的会员权益已到期，15日后名下客人会自动与您解除绑定，为保证您的权益务必在时效内及时缴费</view>
+    </view>
+    <view class="tixian-money">
+        <view class="tixian-money-title">
+            <text class="font-weight">成为会员可提现：</text>
+            <view class="tixian-money-logs" wx:if="{{hasJoin==true}}" bindtap='towithdrawal'>提现记录</view>
+        </view>
+        <view class="tixian-money-content">
+            <view class="tixian-money-content-left">
+                 <view>{{money}}</view>
+                <view class="yuan">元</view>
+            </view>
+            <view class="tixian-money-content-right" bindtap='withdraw'>
+                <text>提现</text>
+                <image src="../../../static/images/tixian.png"></image>
+            </view>
+           
+        </view>
+    </view>
+    <view class="view-more-rights" bindtap='viewRights'>
+        <view class="view-more-rights-left font-weight">
+            <image src="../../../static/images/vip-icon2.png"></image>
+            <text>查看更多会员权益</text> 
+        </view>
+        <view class="view-more-rights-right">
+            <image src="../../../static/images/more.png"></image>
+        </view>
+    </view>
+    <view class="myvip-info">
+        <view class="myvip-info-item ">
+            <navigator url="../earnings/earnings?money={{money}}" class="myvip-info-item-url myvip-info-item-1">
+                <view class="myvip-info-item-left font-weight">
+                    <image src="../../../static/images/shouyi-detail.png"></image>
+                    <text>收益明细</text>
+                </view>
+                <view class="myvip-info-item-right">
+                    <image src="../../../static/images/more.png"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="myvip-info-item ">
+            <navigator url="../team/team" class="myvip-info-item-url myvip-info-item-1">
+                <view class="myvip-info-item-left font-weight">
+                    <image src="../../../static/images/myteam.png"></image>
+                    <text>我的团队</text>
+                </view>
+                <view class="myvip-info-item-right">
+                    <image src="../../../static/images/more.png"></image>
+                </view>
+            </navigator>
+        </view>
+        <view class="myvip-info-item">
+            <navigator url="../topUpLogs/topUpLogs" class="myvip-info-item-url">
+                <view class="myvip-info-item-left font-weight">
+                    <image src="../../../static/images/chongzhi-logs.png"></image>
+                    <text>充值记录</text>
+                </view>
+                <view class="myvip-info-item-right">
+                    <image src="../../../static/images/more.png"></image>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

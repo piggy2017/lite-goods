@@ -1,0 +1,30 @@
+<view>
+    <view class="subject-top-img">
+        <image src="http://img.tracenet.cn/bg38.jpg"></image>
+    </view>
+     <view class="subject-content">
+        <view class="subject-item" wx:for="{{hotGoods}}" wx:key="{{item.id}}">
+            <navigator url="../goods/goods?id={{item.id}}" class="subject-item-url">
+                <image src="{{item.list_pic_url}}" class="subject-item-pic"></image>
+                <view class="subject-item-right">
+                    <view class="goods-name">{{item.name}}</view>
+                    <view class="fanli">
+                        <view class="vip-back-left">返利:￥{{item.rebate_price}}</view>
+                        <text class="vip-back-right">+ ￥{{item.sub_rebate_price}}(会员)</text>
+                    </view>
+                    <view class="goods-price">
+                        <text class="sale-num-left">￥{{item.retail_price}}</text>
+                        <text class="sale-num-right">已售:{{item.sell_volume}}</text>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+     <view class="nav-top" >
+        <image src="../../static/images/home-111.png" bindtap='goHome'></image>
+        <button class="share-icon-1" open-type="share">
+            <image src="../../static/images/share-111.png"></image>
+        </button>
+        <image src="../../static/images/top-111.png" bindtap='goTop'></image>
+    </view>
+</view>

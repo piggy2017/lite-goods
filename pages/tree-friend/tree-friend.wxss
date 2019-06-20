@@ -1,0 +1,150 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: PingFangSC-Regular;
+    background-position: center center;
+    background-image: url("http://114.55.24.122:8999/kjyj/bg9.jpg");
+}
+.container{
+    position: relative;
+    min-height: 100%;
+}
+.play{
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    top: 70rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 136rpx;
+    text-align: center;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #FFFFFF;
+    background-image: linear-gradient(-204deg, #B4E335 0%, #0EA342 96%);
+    border-top-right-radius:30rpx;
+    border-bottom-right-radius: 30rpx; 
+}
+.play image{
+    height: 60rpx;
+    width: 136rpx;
+}
+
+.info{
+    width: 700rpx;
+    height:820rpx;
+    opacity: 1;
+    background-image: linear-gradient(-180deg, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0.55) 57%, rgba(255,255,255,0.07) 86%, rgba(255,255,255,0.0) 100%);
+    border-radius: 8px;
+    margin: 96rpx auto 4rpx auto;
+    position: relative;
+}
+.user-name{
+   width: 100%;
+   text-align: center;
+    font-size: 30rpx;
+    color: #666666;
+    padding-top: 64rpx;
+}
+.user-pic{
+    width: 104rpx;
+    height: 104rpx;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 9;
+    border: 4rpx solid #fff;
+    top: -52rpx;
+    left: 297rpx;
+}
+.user-pic image{
+    width: 104rpx;
+    height: 104rpx;
+    border-radius: 50%;
+}
+.shuzhi{
+    height: 250rpx;
+    width: 388rpx;
+    margin: 60rpx auto 24rpx auto;
+}
+.shuzhi image{
+    height: 250rpx;
+    width: 388rpx; 
+}
+.text-green{
+    font-size: 24rpx;
+    color: #1DA286;
+    text-align: center;
+    margin-top: 20rpx;
+}
+.tishi{
+    margin-top: 40rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #0EAA4E;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.tishi image{
+    width: 124rpx;
+    height: 10rpx;
+}
+.image-left{
+    margin-left: 40rpx;
+}
+.image-right{
+    margin-right: 40rpx;
+}
+.info-wraper{
+    width: 100%;
+    position: relative;
+}
+.dagu{
+    position: absolute;
+    z-index: 99;
+    top: 700rpx;
+    width: 100%;
+    height: 750rpx;
+}
+.dagu-wraper{
+    position: relative;
+    width: 100%;
+    height: 750rpx;
+}
+.dagu image{
+    width: 100%;
+    height: 100%;
+}
+.success{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 200rpx;
+    width: 290rpx;
+    left: 230rpx;
+    height: 200rpx;
+} 
+.success image{
+    width: 100%;
+    height: 100%;
+}
+.golddown{
+    animation:down 1.8s;
+}
+@keyframes down{
+    0%{
+        opacity: 1;
+        top:200rpx;
+        z-index:999;
+    }
+    100% {
+        opacity: 0;
+        top: 0rpx;
+        z-index:999;
+    }
+}

@@ -1,0 +1,209 @@
+page{
+    width: 100%;
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.lottery-list-top{
+    width: 100%;
+    height: 300rpx;
+
+}
+.container-kong{
+    margin: 120rpx auto 0 auto;
+    width: 272rpx;
+    height: 240rpx;
+}
+.container-kong image{
+    width: 272rpx;
+    height: 240rpx;
+}
+.coupon-none{
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    color: #f08d7e;
+}
+.goHome{
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 30rpx;
+    border: 1rpx solid #ddd;
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+    margin: 40rpx auto 0 auto;
+}
+.lottery-list-top image{
+    width: 100%;
+    height: 300rpx;
+}
+.lottery-item-info-right-wraper{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.kaijiang-p{
+    font-family: PingFangSC-Regular;
+    font-size: 24rpx;
+    color: #D53333;
+    letter-spacing: 0;
+    text-align: justify;
+    padding-right: 6rpx;
+}
+.lottery{
+    width: 710rpx;
+    margin: 20rpx auto 0 auto;
+}
+.lottery-item{
+    width: 710rpx;
+    height: 510rpx;
+    background-color: #fff;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+.lottery-item:not(:first-child){
+    margin-top: 20rpx;
+}
+.lottery-item-url{
+    width: 710rpx;
+    height: 510rpx;
+    display: block;
+    position: relative;
+}
+.lottery-item-image{
+    width: 100%;
+    height: 360rpx;
+    position: relative;
+    border-top-left-radius: 6rpx;
+    border-top-right-radius: 6rpx;
+}
+.lottery-item-image image{
+    width: 100%;
+    height: 360rpx;
+}
+.lottery-item-price{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 240rpx;
+    height: 80rpx;
+    left: 0;
+    bottom: 30rpx;
+    border-bottom-right-radius: 6rpx;
+    border-top-right-radius: 6rpx;
+    font-family: PingFangSC-Medium;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.lottery-item-price-left{
+    font-size: 50rpx;
+    margin-left: 20rpx;
+    color: #FFFFFF;
+    margin-right: 12rpx;
+}
+.lottery-item-price-right{
+    font-size: 24rpx;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+.yuanjia{
+    text-decoration: line-through;
+}
+.lottery-item-info{
+    width: 660rpx;
+    height: 100rpx;
+    padding: 20rpx 30rpx 30rpx 20rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.lottery-item-info-left{
+    width: 480rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #333333;
+}
+.lottery-item-name{
+    width: 100%;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden;
+    font-weight: bold;
+}
+.end-time{
+    margin-top: 10rpx;
+    width: 280rpx;
+    height: 50rpx;
+    background: #E6E6E6;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    color: #999999;
+    display: flex;
+    flex-flow: row nowrap;
+    line-height: 50rpx;
+}
+.end-time-left{
+    background: #000000;
+    border-radius: 8rpx;
+    height: 100%;
+    font-family: PingFangSC-Semibold;
+    color: #FFFFFF;
+    width: 170rpx;
+    text-align: center;
+}
+.mar-left-10{
+    margin-left: 10rpx;
+}
+.lottery-item-info-right{
+    width: 144rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    color: #fff;
+    background: #D53333;
+    border-radius: 30rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 30rpx;
+    margin-left: 32rpx;
+}
+.goods-btn{
+    margin-top: 20rpx;
+    background-color: #fff;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #999999;
+    height: 80rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-bottom: 1rpx solid #ddd;
+    box-sizing: border-box;
+}
+.goods-btn view{
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    line-height: 80rpx;
+    position: relative;
+}
+.goods-btn-detail-active{
+    font-family: PingFangSC-Semibold;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333333;
+}
+.goods-btn-detail-active::after{
+    position: absolute;
+    content: "";
+    z-index: 99;
+    left: 157rpx;
+    width: 60rpx;
+    height: 4rpx;
+    background-color: #d54141;
+    bottom: 1rpx;
+}

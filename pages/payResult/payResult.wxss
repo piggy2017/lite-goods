@@ -1,0 +1,57 @@
+.pay-result{
+    width: 100%;
+    min-height: 100%;
+}
+.hr{
+    width: 100%;
+    height: 16rpx;
+    background-color: #f2f2f2;
+}
+.pay-result-content{
+    width: 100%;
+    margin-top: 100rpx;
+}
+.pay-result-content image{
+    height: 122rpx;
+    width: 172rpx;
+    margin-left: 290rpx;
+}
+.pay-result-success{
+    margin-top: 40rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 18px;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+    font-weight: bold;
+}
+.pay-result-fahuo{
+    margin-top: 20rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: #666666;
+    letter-spacing: 0;
+    text-align: center;
+}
+.pay-btn{
+    border: 1px solid #D53333;
+    border-radius: 4px;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    width: 520rpx;
+    height: 72rpx;
+    box-sizing: border-box;
+    line-height: 70rpx;
+    letter-spacing: 0;
+    text-align: center;
+}
+.view-order{
+    background-color: #fff;
+    color: #D53333;
+    margin: 80rpx auto 40rpx auto;
+}
+.back-home{
+    background-color: #D53333;
+    color: #fff;
+    margin: 0 auto;
+}

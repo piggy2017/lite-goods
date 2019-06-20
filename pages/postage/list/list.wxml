@@ -1,0 +1,30 @@
+<view class="postage">
+    <view class="postage-top">
+        <image src="http://img.tracenet.cn/bg7.jpg"></image>
+    </view>
+    <view class="" wx:if="{{postAgeList.length==0}}">
+        <view class="wraper">
+            <view class="container-kong">
+                <image src="http://img.tracenet.cn/bg15.png"></image>
+            </view>
+            <view class='coupon-none'>未找到相关商品</view>
+            <view class='goHome' bindtap='gHome'>去别处逛逛</view>
+        </view>
+    </view>
+    <view class="postage-content" wx:else>
+        <view class="postage-item" wx:for="{{postAgeList}}" wx:key="{{item.id}}">
+         <!-- <navigator url="../../goods/goods?id={{item.id}}&type=postage" class="hot-goods-content-item-url"> -->
+            <navigator url="../../activity-goods/activity-goods?postageId={{item.postageId}}&type=postage&goodsId={{item.id}}" class="hot-goods-content-item-url">
+                 <image src="{{item.list_pic_url}}"></image>
+                 <view class="hot-goods-content-item-info">
+                        <view class="hot-goods-content-item-name">{{item.name}}</view>
+                         
+                        <view class="sale-num">
+                            <view class="sale-num-left">邮费<text>￥{{item.retail_price}}</text></view>
+                            <view class="sale-num-right">已售<text>{{item.sell_volume}}</text></view>
+                        </view>
+                    </view>
+            </navigator>
+        </view>
+    </view>
+</view>

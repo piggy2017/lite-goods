@@ -1,0 +1,84 @@
+page{
+    min-height: 100%;
+    background-color: #f2f2f2;
+}
+.address-add{
+  width: 100%;
+  background-color: #fff;
+   margin-top: 20rpx;
+}
+.add-address-form{
+  width: 100%;
+  background-color: #fff;
+}
+.form-cell{
+    background-color: #fff;
+    height: 106rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    padding:0 30rpx;
+    /* line-height: 106rpx; */
+    align-items: center;
+    position: relative;
+}
+.lianxi-ren{
+    position: absolute;
+    z-index: 99;
+    width: 46rpx;
+    height: 44rpx;
+    right: 36rpx;
+}
+.lianxi-ren image{
+    width: 100%;
+    height: 100%;
+}
+.form-cell::after{
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    bottom: 1rpx;
+    height: 1rpx;
+    background-color: #ddd;
+    left: 30rpx;
+    content: "";
+}
+.form-cell-label{
+    width: 210rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #666666;
+    
+}
+textarea {
+    width: 400rpx !important;
+}
+.form-cell-input,.weui-input{
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #AAAAAA !important;
+}
+.form-cell-text{
+    height: 172rpx !important;
+    display: flex;
+    flex-flow: row nowrap;
+    padding:30rpx 30rpx 0 30rpx;
+}
+.address-textarea{
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #AAAAAA !important;
+    height: 150rpx;
+}
+.save-address{
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    color: #fff;
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    background: #D53333;
+}

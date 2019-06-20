@@ -1,0 +1,122 @@
+<view class="detail">
+    <view class="detail-top" wx:if="{{status==2 || status==3}}">
+        <image src="../../../static/images/pingtuan-error.png"></image>
+        <view class="time-end-top">
+            <text class="time-end-item">拼</text><text>:</text>
+            <text class="time-end-item">团</text><text>:</text>
+            <text class="time-end-item">失</text><text>:</text>
+            <text class="time-end-item">败</text>
+        </view>
+    </view>
+    <view class="detail-top" wx:if="{{status==1 || status==0}}">
+        <image src="../../../static/images/choujiang-detail-top.png"></image>
+        <view class="time">
+            <view class="time-top">- 仅剩 -</view>
+            <view class="time-content">
+                <text class="time-content-item">{{hours}}</text><text>:</text>
+                <text class="time-content-item">{{mins}}</text><text>:</text>
+                <text class="time-content-item">{{secs}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="rules" bindtap='viewRule'>
+        <image src="../../../static/images/choujiang-rule.png"></image>
+    </view>
+    <view class="goods-detail">
+        <view class="goods-content">
+            <view class="goods-info">
+                <image src="{{goodsInfo.goodsTitlePicture}}"></image>
+                <view class="goods-info-center">
+                    <view class="goods-name">{{goodsInfo.goodsName}}</view>
+                    <view class="kaijiang-time">{{date}} 开奖</view>
+                </view>
+                <view class="goods-info-right">
+                    <view class="lottery-price">¥{{goodsInfo.payPrice}}</view>
+                    <view class="before-price">¥{{goodsInfo.goodsPrice}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="hr">
+            <image src="../../../static/images/fenge.png"></image>
+        </view>
+        <view class="person-info">
+            <view class="share-tishi" wx:if="{{status==0}}">
+                <text>邀请</text>
+                <text class="shadow-1 shadow">{{person}}</text>
+                <text>位好友一起参加获得抽奖资格</text>
+            </view>
+            <view class="share-tishi" wx:if="{{status==1}}">
+                <text>已成团，等待开奖</text>
+            </view>
+            <view class="share-tishi" wx:if="{{status==2 || status==3}}">
+                <text>拼团失败，下次加油</text>
+            </view>
+            <view class="person-list">
+                <view class="person-item" wx:for="{{userInfo}}" wx:key="{{item.userId}}">
+                    <view class="person-item-img">
+                        <image src="{{item.userPicture}}"></image>
+                        <view class="tuanzhang" wx:if="{{item.captain==true}}">团长</view>
+                    </view>
+                    <view class="person-item-name {{item.fill===true?'fill-name':''}}">{{item.userName}}</view>
+                </view>
+            </view>
+            <button class="share-friend" wx:if="{{status==0 && joinGroup==true}}" open-type="share" data-type="add">点击邀请好友参团</button>
+            <button class="share-friend-suc" wx:if="{{status==1}}">已经成团待开奖</button>
+            <button class="share-friend-suc" wx:if="{{status==2}}">拼团失败，还差{{number}}人</button>
+            <button class="share-friend-suc" wx:if="{{status==3}}">开奖失败，未到达开奖人数</button>
+            <button class="share-friend" wx:if="{{joinGroup==false && status==0}}" bindtap='chooseAddress'>点击参团</button>
+            <!-- <button class="share-friend" bindtap='chooseAddress'>点击参团</button> -->
+        </view>
+    </view>
+</view>
+
+    <view class="{{ isShowAddress ? 'zan-dialog-show' : '' }}">
+        <view class="popup" wx:if="{{isShowAddress}}" bindtap="clickMode">
+        </view>
+        <view class="popup-wraper-2">
+            <view class="address-title">
+                <view class="title-left" bindtap="clickMode">取消</view>
+                <view class="title-center">选择一个收货地址</view>
+                <view class="title-right" bindtap='goAddAddress'>+ 新增</view>
+            </view>
+            <view class="address-content" wx:if="{{addressList.length>0}}">
+                <view class="address-item" wx:for="{{addressList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='checkAddress'>
+                    <view class="address-item-left">
+                        <view class="address-item-left-top">
+                            <text>{{item.userName}}</text>
+                            <text class="mar-left-30">{{item.telNumber}}</text>
+                            <text class="moren" wx:if="{{item.is_default==1}}">默认</text>
+                        </view>
+                        <view class="address-detail">{{item.full_region}}{{item.detailInfo}}</view>
+                    </view>
+                    <view class="address-item-right" wx:if="{{item.checkd==false}}">
+                        <image src="../../../static/images/address-down.png"></image>
+                    </view>
+                    <view class="address-item-right" wx:else>
+                        <image src="../../../static/images/address-selected.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="address-content center" wx:else>
+                <image src="../../../static/images/add-address-tishi.png" class="add-address-tishi"></image>
+                <view class="tishi-1">请新增一个收货地址</view>
+                <view class="tishi-2">便于您中奖的时候我们发货给您</view>
+            </view>
+        </view>
+    </view>
+    
+<view class="rule-mode {{ruleShow===false?'hidden':''}}" bindtap='closeModals'>
+    <view class="rule-wraper">
+        <view class="rules-content" catchtap="noThing">
+            <view class="rules-content-title">抽奖规则</view>
+            <view class="rules-content-bottom">
+                <view class="rule-list">1.点击“马上抢”到商品详情开团,转发邀请好友参团；</view>
+                <view class="rule-list">2.规定时间内完成拼团可以获取一次抽奖资格,成团次数越多中奖概率越大；</view>
+                <view class="rule-list">3.同一商品不限制开团次数;</view>
+                <view class="rule-list">4.零元抽奖不接受退换货申请；</view>
+                <view class="rule-list">5.如有疑问请联系，请联系客服</view>
+                <view class="i-know" catchtap='closeModal'>我知道了</view>
+            </view>
+        </view>
+    </view>
+</view>

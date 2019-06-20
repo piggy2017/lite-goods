@@ -1,0 +1,88 @@
+<view class="my-order">
+    <view class="order-class">
+        <view class="order-class-item {{active==0?'order-class-active':''}} " data-type="0" bindtap='orderClass'>全部</view>
+        <view class="order-class-item {{active==1?'order-class-active':''}} " data-type="1" bindtap='orderClass'>待付款</view>
+        <view class="order-class-item {{active==2?'order-class-active':''}} " data-type="2" bindtap='orderClass'>待发货</view>
+        <view class="order-class-item {{active==3?'order-class-active':''}} " data-type="3" bindtap='orderClass'>待收货</view>
+        <view class="order-class-item {{active==4?'order-class-active':''}} " data-type="4" bindtap='orderClass'>待评价</view>
+        <view class="order-class-item {{active==5?'order-class-active':''}} " data-type="5" bindtap='orderClass'>已完成</view>
+    </view>
+    <view class="hr"></view>
+    <view class="order-wraper" wx:if="{{orderList.length===0}}">
+        <view class="container-kong">
+            <image src="http://img.tracenet.cn/bg14.png"></image>
+        </view>
+        <view class='coupon-none'>您还没有相关订单</view>
+    </view>
+    <view class="order-wraper" wx:else>
+        <view class="my-order-item" wx:for="{{orderList}}" wx:key="{{item.orderId}}">
+            <view class="my-order-item-title">
+                <view class="my-order-item-title-left">
+                    <image src="../../../static/images/time.png"></image>
+                    <text>{{item.orderDate}}</text>
+                </view>
+                <view class="my-order-item-title-right title-red" wx:if="{{item.orderStatus==1}}">
+                    待付款
+                </view>
+                <view class="my-order-item-title-right" wx:elif="{{item.orderStatus==2}}">
+                    待发货
+                </view>
+                <view class="my-order-item-title-right title-red" wx:elif="{{item.orderStatus==3}}">
+                    待收货
+                </view>
+                <view class="my-order-item-title-right title-red" wx:elif="{{item.orderStatus==4}}">
+                    待评价
+                </view>
+                <view class="my-order-item-title-right" wx:elif="{{item.orderStatus==5}}">
+                    已完成
+                </view>
+                <view class="my-order-item-title-right" wx:elif="{{item.orderStatus==6}}">
+                    已取消
+                </view>
+            </view>
+            <view class="my-order-item-content" wx:for="{{item.productInfo}}" wx:key="{{childItem.id}}" wx:for-item="childItem">
+                <navigator url="../order-detail/order-detail?orderId={{item.orderId}}" class="my-order-item-content-url">
+                    <view class="my-order-item-content-left">
+                        <image src="{{childItem.productPicture}}"></image>
+                    </view>
+                    <view class="my-order-item-content-right">
+                        <view class="my-order-goods-left">
+                            <view class="my-order-goods-name">{{childItem.productName}}</view>
+                            <view class="my-order-goods-speci" wx:if="{{childItem.productSpecification!=null}}">{{childItem.productSpecification}} </view>
+                            <view class="my-order-goods-speci" wx:else>默认规格</view>
+                        </view>
+                        <view class="my-order-goods-right">
+                            <view class="unit-price">￥{{childItem.productPrice}}</view>
+                            <view class="goods-num">x{{childItem.productNumber}}</view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <view class="my-order-item-bot">
+                <view class="total-price">
+                    <text class="total-price-left">共<text>{{item.totalNumber}}</text>件商品，合计</text>
+                    <text class="total-price-right">¥{{item.totalPrice}}</text>
+                </view>
+                <view class="my-order-item-btn" wx:if="{{item.orderStatus==1}}">
+                    <view class="cancel-order order-btn margin-right-20" data-orderId="{{item.orderId}}" bindtap='orderCancel'>取消订单</view>
+                    <view class="go-pay order-btn" data-orderId="{{item.orderId}}" bindtap='goPay'>去支付</view>
+                </view>
+                <view class="my-order-item-btn" wx:elif="{{item.orderStatus==2}}">
+                    <view class="cancel-order order-btn" data-orderId="{{item.orderId}}" bindtap='orderDetail'>订单详情</view>
+                </view>
+                <view class="my-order-item-btn" wx:elif="{{item.orderStatus==3}}">
+                    <view class="cancel-order order-btn margin-right-20" bindtap='viewExpress' data-orderId="{{item.orderId}}">查看物流</view>
+                    <view class="go-pay order-btn" data-orderId="{{item.orderId}}" bindtap='goRecive'>确认收货</view>
+                </view>
+                <view class="my-order-item-btn" wx:elif="{{item.orderStatus==4}}">
+                    <view class="go-pay order-btn" bindtap='goComment' data-orderId="{{item.orderId}}">去评价</view>
+                </view>
+
+                <view class="my-order-item-btn" wx:elif="{{item.orderStatus==6}}">
+                    <view class="cancel-order order-btn" data-orderId="{{item.orderId}}" bindtap='orderDetail'>订单详情</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

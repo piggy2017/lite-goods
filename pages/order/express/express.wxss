@@ -1,0 +1,103 @@
+.express-con-hr {
+    height: 16rpx;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+.express-con-top {
+    width: 100%;
+    height: 184rpx;
+    background-image: linear-gradient(-210deg, #f29980 5%, #eb4c4c 98%);
+    font-family: PingFangSC-Medium;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.top-text {
+    padding: 30rpx 30rpx 0 30rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.top-text-right{
+    width: 600rpx;
+}
+
+.top-text image {
+    width: 68rpx;
+    height: 68rpx;
+}
+
+.margin-30 {
+    margin-left: 30rpx;
+}
+
+.location {
+    margin-top: 10rpx;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.express-con-list {
+    width: 100%;
+    background-color: #fff;
+}
+
+.express-con-item {
+    padding: 0 0 40rpx 0;
+    border-left: 2rpx solid #eee;
+    width: 650rpx;
+    margin: 0 auto;
+    position: relative;
+}
+
+.express-con-item::after {
+    content: "";
+    position: absolute;
+    z-index: 99;
+    left: -10rpx;
+    top: 8rpx;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.express-con-item:first-child {
+    margin-top: 30rpx;
+}
+
+.express-con-item:first-child .express-con-item-title {
+    font-weight: bold;
+}
+
+.express-con-item:first-child::after {
+    content: "";
+    position: absolute;
+    z-index: 99;
+    left: -18rpx;
+    top: 0;
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 50%;
+    background-color: #d53333;
+}
+
+.express-con-item:last-child {
+    border-left: none !important;
+}
+
+.express-con-item-title {
+    font-family: PingFangSC-Medium;
+    font-size: 28rpx;
+    color: #333;
+    margin-left: 40rpx;
+    word-wrap:break-word;
+}
+
+.express-con-item-time {
+    font-size: 28rpx;
+    margin-left: 40rpx;
+    color: #999;
+    margin-top: 6rpx;
+}

@@ -1,0 +1,32 @@
+.is-1{
+    width: 100%;
+    height: 456rpx;
+}
+.is-1 image{
+     width: 100%;
+    height: 456rpx;
+}
+.is-2{
+    width: 100%;
+    height: 463rpx;
+}
+.is-2 image{
+    width: 100%;
+    height: 463rpx;
+}
+.is-3{
+    width: 100%;
+    height: 516rpx;
+}
+.is-3 image{
+    width: 100%;
+    height: 516rpx;
+}
+.is-4{
+    width: 100%;
+    height: 365rpx;
+}
+.is-4 image{
+    width: 100%;
+    height: 365rpx;
+}

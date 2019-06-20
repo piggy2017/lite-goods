@@ -1,0 +1,43 @@
+<view class="fans">
+    <view class="fans-top">
+        <image src="http://img.tracenet.cn/bg22.png"></image>
+    </view>
+    <view class="fans-num">
+        <view class="fans-num-item">
+            <view>{{totalFans}}</view>
+            <view class="fans-num-about ">邀请好友数</view>
+        </view>
+        <view class="fans-num-item border-right">
+            <view>{{bindFans}}</view>
+            <view class="fans-num-about ">绑定好友数</view>
+        </view>
+        <view class="fans-num-item">
+            <view>{{totalNumber}}</view>
+            <view class="fans-num-about">好友下单数</view>
+        </view>
+    </view>
+    <view class="logs-tit">邀请记录</view>
+    <view class="fans-content" wx:if="{{userInfo.length==0}}">
+        <image src="http://img.tracenet.cn/bg26.png" class="no-logs-img"></image>
+        <view class="no-fans-text">您还没有邀请团员</view>
+    </view>
+    <view class="fans-content" wx:else>
+        <view class="fans-content-title">
+            <view class="mar-left-13">好友</view>
+            <view class="mar-left-100">绑定情况</view>
+            <view class="mar-right-13">下单数</view>
+        </view>
+        <view class="fans-item" wx:for="{{userInfo}}" wx:key="index" wx:for-index="index">
+            <view class="fans-item-left">
+                <image src="{{item.photo}}"></image>
+                <text>{{item.userName}}</text>
+            </view>
+            <view class="fans-item-center text-red" wx:if="{{item.bind==true}}">绑定</view>
+            <view class="fans-item-center" wx:else>未绑定</view>
+
+            <view class="fans-item-right text-red"  wx:if="{{item.bind==true}}">{{item.orderNumber}}</view>
+            <view class="fans-item-right" wx:else>{{item.orderNumber}}</view>
+        </view>
+    </view>
+    <button open-type='share' class="share-btn">继续邀请好友</button>
+</view>
